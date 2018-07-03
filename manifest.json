@@ -1,0 +1,23 @@
+{
+  "name": "The mm* Journal",
+  "short_name": "mmj",
+  "description": "Our gift to you",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#cf0a2c",
+  "icons": [
+    {
+      "src": "/img/homescreen-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/homescreen-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "transparent",
+  "lang": "en"
+}

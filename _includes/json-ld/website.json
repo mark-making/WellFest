@@ -1,0 +1,19 @@
+{
+  "@type": "WebSite",
+  "name": "{{site.title}}",
+  "description": "{{site.description}}",
+  "url": "{{ site.url | absolute_url }}",
+  "image": "#",
+  "sameAs": [
+    "https://www.facebook.com/ChippyWellFest/",
+    "https://www.instagram.com/ChippyWellFest18/"
+  ],
+  "creator": {
+    "@id": "{{ site.url | absolute_url }}#address" 
+  },
+  "accessibilityControl": [
+    "fullKeyboardControl",
+    "fullMouseControl",
+    "fullTouchControl"
+  ]
+}

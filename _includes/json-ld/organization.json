@@ -1,0 +1,10 @@
+{
+  "@type": "Organization",
+  "@id": "{{ site.url | absolute_url }}#address",
+  "name": "{{site.title}}",
+  "event": {
+    "@id": "{{ site.url | absolute_url }}#main-event"
+  },
+  "url": "{{ site.url | absolute_url }}",
+  "logo": "http://www.example.com/images/logo.png"  
+}

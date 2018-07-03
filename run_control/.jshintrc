@@ -1,0 +1,6 @@
+{
+  "jquery" : true,
+  "laxcomma" : true,
+  "unused" : true,
+  "predef" : [ "Modernizr" ]
+}

@@ -1,0 +1,57 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="mmj">
+  <meta name="apple-mobile-web-app-title" content="mmj">
+  <meta name="theme-color" content="#cf0a2c">
+  <meta name="msapplication-navbutton-color" content="#cf0a2c">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="keywords" content="Health and wellness website, Alternative and holistic health service" />
+  <meta name="description" content="{{ site.description }}" />
+  {%- comment %} OpenGraph {% endcomment %}  
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_gb" />
+  <meta property="og:url" content="{{ site.url | absolute_url }}" />
+  <meta property="og:title" content="{{ site.title }}" />
+  <meta property="og:description" content="{{ site.description }}" />
+  <meta property="og:image" content="#" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:see_also" content="https://www.instagram.com/chippywellfest18" />
+  <meta property="og:see_also" content="https://www.facebook.com/ChippyWellFest/" />
+  {%- comment %} Twitter {% endcomment %} 
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@{{site.twitter_username}}" />
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="/favicon.ico" rel="icon" type="image/x-icon">
+  <link href="/img/homescreen-16x16.png" rel="icon" type="image/png" sizes="16x16">
+  <link href="/img/homescreen-32x32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="/img/homescreen-192x192.png" rel="icon" type="image/png" sizes="192x192">
+  <link href="/img/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+	<link href="{{ page.url | remove:'index.html' | absolute_url }}" rel="canonical">
+  {%- comment %} CSS {% endcomment %} 
+  {% if jekyll.environment == 'production' %}
+  <link rel="stylesheet" href="{{ "/css/screen.min.prefix.css" | absolute_url }}">
+  {%- else -%}
+  <link rel="stylesheet" href="{{ "/css/screen.css" | absolute_url }}">
+  {%- endif %}
+</head>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@graph": 
+  [
+    {% include /json-ld/website.json -%},
+    {% include /json-ld/organization.json -%},
+    {% include /json-ld/event.json -%}      
+  ]
+}
+</script>

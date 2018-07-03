@@ -1,0 +1,56 @@
+# https://www.netlify.com/docs/netlify-toml-reference/
+
+[Settings]
+ID = "Your_Site_ID"
+
+# Settings in the [build] context are global and are applied to all contexts unless otherwise overridden by more specific contexts.  
+
+[build]
+  # This is the directory to change to before starting a build.
+  base    = "project/"
+  # NOTE: This is where we will look for package.json/.nvmrc/etc, not root.
+  # This is the directory that you are publishing from (relative to root of your repo)
+  publish = "project/build-output/"
+  # This will be your default build command
+  command = "echo 'default context'"
+
+# Production context: All deploys from the Production branch set in your site's deploy settings will inherit these settings.
+[context.production]
+  publish = "output/"
+  command = "make publish"
+  environment = { NODE_ENV = "8.0.1" }
+
+# Deploy Preview context: All Deploy Previews (https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/)
+# will inherit these settings.
+[context.deploy-preview]
+  publish = "dist/"
+
+# Branch Deploy context: All deploys that are not resulting from a Pull/Merge Request and not from the primary, linked branch will inherit these settings.
+[context.branch-deploy]
+  command = "echo branch"
+[context.branch-deploy.environment]
+  NODE_ENV = "development"
+
+# Specific branch context: Deploys from this branch
+# will take these settings and override their
+# current ones.
+[context.staging] # 'staging' is a branch name
+  command = "echo 'staging'"
+  base = "staging"
+
+# A basic redirects rule
+[[redirects]]
+  from = "/*"
+  to = "/blog/:splat"
+
+[[headers]]
+  for = "/*" # This defines which paths this specific [[headers]] block will cover.
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "frame-ancestors https://www.facebook.com"
+    # Multi-key header rules are expressed with multi-line strings
+    Link = '''
+    </assets/css/base.css>; rel=preload; as=style, \
+    </assets/css/base2.css>; rel=preload; as=style, \
+    </assets/css/base3.css>; rel=preload; as=style'''

@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+//
+// ┌─────────────────┐
+// │ THEME VARIABLES │
+// └─────────────────┘
+//
+
+$font-path: "../fonts"!default;
+
+$black:    rgb(0,0,0);
+$white:    rgb(255,255,255);
+$yellow:   rgb(255,237,0);
+$blue:     rgb(107,212,245);
+$green:    rgb(195,243,0);
+$pink:     rgb(255,125,255);
+
+$font-os:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+$primary: $yellow;
+$secondary: $black;
+
+//
+// ┌────────────────┐
+// │ THEME PARTIALS │
+// └────────────────┘
+//
+
+@import "main";

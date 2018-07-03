@@ -1,0 +1,7 @@
+# Flags
+
+# true/false
+
+gated: true
+availability: "InStock" # SoldOut
+status: "EventScheduled" # EventCancelled | EventPostponed | EventRescheduled | EventScheduled

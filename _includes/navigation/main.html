@@ -1,0 +1,5 @@
+<nav aria-label="main">
+  {% for item in site.data.navigation.main %}
+    <a href="#{{ item.name | slugify }}"><span>{{ item.name }}</span></a>
+  {% endfor %}
+</nav>

@@ -1,0 +1,45 @@
+<section class="pinch">
+  <h1 class="feature">
+    <b>9</b>
+    <em>Speakers</em>
+    <em>Stories</em>
+  </h1>
+  <p>There is a fundamental mismatch between the creatures we are and the lives we are leading.  It makes no sense that we are experiencing pandemics in many chronic diseases in an era of unsurpassed wealth and scientific knowledge.</p>
+  <p>The answers are out there, if we only change our mindsets and where we look.</p>
+  <p>Infact, the answers are HERE, at ChippyWellFest…</p>
+</section>
+<div role="region" aria-label="speakers" tabindex="0" id="speakers">
+  <ul>
+    {% for speaker in site.data.speaker-profiles.speaker %}    
+      <li>
+        <div tabindex="0" id="{{ speaker.name | slugify }}">
+          <figure>
+            <img src="http://via.placeholder.com/250?text={{ speaker.name }}" alt="Graphic of {{ speaker.name }}">          
+            <figcaption>
+              <strong>{{ speaker.name }}</strong>
+              <br>
+              <em>{{ speaker.role }}</em>
+            </figcaption>
+          </figure>
+          <p>
+            <b>{{ speaker.title }}</b>
+            <br>
+            {{ speaker.info -}}
+          </p>
+          {%- for social in speaker.social -%}
+            <a href="https://twitter.com/{{- social.twitter -}}">@{{social.twitter}}</a>            
+          {%- endfor -%}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+<nav aria-label="speaker selection">
+  <ul>
+    {% for speaker in site.data.speaker-profiles.speaker %}    
+    <li>
+      <a href="{{ speaker.name | slugify | prepend: '#' }}">{{ speaker.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

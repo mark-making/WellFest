@@ -1,0 +1,74 @@
+{
+  "@type": "BusinessEvent",
+  "@id": "{{ site.url | absolute_url }}#main-event",
+  "name": "ChippyWellFest 2018",
+  "description": "{{site.description}}",
+  "about": "Lifestyle, health and wellbeing",
+  "startDate": "2018-09-29T08:30:00+01:00",
+  "endDate": "2018-09-29T17:30:00+01:00",
+  "inLanguage": "en-GB",
+  "isAccessibleForFree": true,
+  "maximumAttendeeCapacity": 210,
+  "eventStatus": "http://schema.org/{{ site.data.flags.status }}",
+  "location": {
+    "@type": "Place",
+    "@id": "{{ site.url | absolute_url }}#venue",
+    "name": "The Theatre Chipping Norton",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2 Spring Street",
+      "addressLocality": "Chipping Norton",
+      "postalCode": "OX7 5NL",
+      "addressRegion": "England",
+      "addressCountry": "GB "
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "@id": "{{ site.url | absolute_url }}#book",
+    "url": "https://chippywellfest18.eventbrite.co.uk",
+    "availability": [
+      "http://schema.org/OnlineOnly",
+      "http://schema.org/{{ site.data.flags.availability }}"
+    ],
+    "availabilityStarts": "2018-06-29T12:00:00+01:00",
+    "validFrom": "2018-09-29T08:30:00+01:00",
+    "price": "0.00",
+    "priceCurrency": "GBP"
+  },
+  "organizer": { "@id": "{{ site.url | absolute_url }}#nick-parker" },
+  "image": [
+    "https://example.com/photos/1x1/photo.jpg",
+    "https://example.com/photos/4x3/photo.jpg",
+    "https://example.com/photos/16x9/photo.jpg"
+  ],  
+  "subEvent": [
+  {%- for speaker in site.data.speaker-profiles.speaker %}
+    {
+      "@type": "Event",
+      "name": "{{ speaker.title }}",
+      "description": "{{- speaker.info | strip_html | strip_newlines | remove: '&#39;' -}}",
+      "startDate": "2018-09-29T08:30:00+01:00",
+      "endDate": "2018-09-29T17:30:00+01:00",
+      "inLanguage": "en-GB",
+      "isAccessibleForFree": true,
+      "location": { "@id": "{{ site.url | absolute_url }}#venue" },
+      "offers": { "@id": "{{ site.url | absolute_url }}#book" },
+      "image": "https://source.unsplash.com/150x150/?face",
+      "performer": {
+        "@type": "Person",
+        "@id": "{{ site.url | absolute_url }}{{ speaker.name | slugify | prepend: '#' }}",
+        "name": "{{ speaker.name }}",
+        "gender": "https://schema.org/{{ speaker.gender }}",
+        "jobTitle": "{{ speaker.role }}",
+        "image": "http://via.placeholder.com/250?text={{ speaker.name | url_encode }}",
+        "sameAs": [
+        {%- for social in speaker.social %}
+          "https://twitter.com/{{social.twitter}}"{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+        ]
+      }        
+    }{% unless forloop.last %},{% endunless %}
+  {%- endfor %}
+  ]
+}

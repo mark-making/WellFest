@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" class="{{ page.layout }} {% if jekyll.environment == 'production' %}production{% else %}development{% endif %}" id="top">
+  {% include head.html %}
+  <body>
+    <a href="#main">Skip to main content</a>
+    {% include header.html %}
+    {% include /navigation/secondary.html %}
+    <main id="main" aria-label="content">
+    {{ content }}
+    </main>
+    {% include footer.html %}
+    {% if jekyll.environment == 'production' %}
+    <script src="{{ "/js/scripts.concat.js" | absolute_url }}"></script>
+    {%- else -%}
+    <script src="{{ "/js/scripts.js" | absolute_url }}"></script>
+    {%- endif %}    
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+	"doctype-first": true,
+	"doctype-html5": true,
+	"indent-style": "spaces",
+	"indent-width": 2,
+	"class-style": false,
+	"id-class-style": false,
+	"attr-no-dup": true,
+	"head-valid-content-model": true
+}

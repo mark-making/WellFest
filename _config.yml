@@ -1,0 +1,40 @@
+#
+# ┌───────────────┐
+# │ SITE SETTINGS │
+# └───────────────┘
+#
+title: "ChippyWellFest"
+email: "nick@thecancerjourneyman.co.uk"
+description: >-
+  ChippyWellFest is a unique day of talks to open minds and challenge understanding around lifestyle, health and wellbeing.
+strapline: >-
+  Prepare to feel empowered to make positive changes, that will have a real and lasting impact on your life.
+twitter_username: ChippyWellFest
+company_website: "http://www.chippywellfest.co.uk"
+url: ""
+strict_front_matter: true
+#
+# ┌────────────────┐
+# │ BUILD SETTINGS │
+# └────────────────┘
+#
+port: 1515
+incremental: true
+markdown: kramdown
+keep_files: [ css, js, img, fonts, service-worker.js, service-worker.js, humans.txt, robots.txt ]
+exclude:
+  - Gulpfile.js
+  - admin
+  - readme.md
+  - package.json
+  - Gemfile
+  - Gemfile.lock
+  - yarn.lock
+  - yarn-error.log
+  - netlify.toml
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - run_control
