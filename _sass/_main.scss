@@ -12,19 +12,6 @@ html {
   }
 }
 
-table {
-  border: {
-    collapse: collapse;
-    spacing: 0;
-  }
-  th, td {
-    text: {
-      align: left;
-    }
-    vertical-align: top
-  }
-}
-
 img,
 iframe { 
   border: 0
@@ -32,9 +19,11 @@ iframe {
 
 * {
   box-sizing: border-box;
-  &:target {
-    outline: 4px solid DodgerBlue;
-    outline-offset: -4px;
+  &:not(#top) {
+    &:target {
+      outline: 4px solid DodgerBlue;
+      outline-offset: -4px;
+    }
   }
 }
 
@@ -125,16 +114,28 @@ h1.feature {
   margin: 0 auto;
   .pinch {
     width: 70%;
-    margin: 2rem auto;
+    margin: 0 auto;
     &.segment {
-      margin: 20rem auto;
+      padding: 20rem;
+      &#you {
+        background-color: $pink;
+      }
+      &#together {
+        background-color: $yellow;
+      }  
+      &#join {
+        background-color: $green;
+      }  
+      &#help {
+        background-color: $blue;
+      }       
     }
   }
 }
 
 header {
   position: sticky;
-  position: -webkit-sticky;
+  z-index: 2;
   top: 0;
   background-color: white; 
 }
@@ -230,10 +231,20 @@ aside {
     border: 0;
     text-align: center;
     font-size: 2rem;
-    transition: all 1s ease;
+    transition: all .5s .3ms ease;
+    transition-property: color, transform;
     background-color: transparent;
     padding: 1rem;
     cursor: pointer;
+    &:hover, &:focus {
+      &[aria-expanded="false"] {
+        [aria-hidden="true"] {
+          color: $blue;
+          transform-origin: center;
+          transform: scale(1.2) rotate3d(0, 0, 1, 90deg);
+        }
+      }
+    }
     p {
       font-size: .8rem;
       letter-spacing: .1rem;
@@ -241,7 +252,7 @@ aside {
       margin: 0;
     }
     [aria-hidden="true"] {
-      transition: all 1s ease;
+      transition: all .5s .3ms ease;
       display: inline-block;
       will-change: transform;
     }
@@ -258,24 +269,37 @@ aside {
       }
     }     
     ~ nav[aria-label="secondary"] {
-      transition: transform .5s .3ms ease;
-      transform: translateX(-100%) translateY(0);
+      writing-mode: vertical-lr;
+      transition: all .5s .3ms ease;
+      transition-property: visibility, transform, opacity;
+      transform: translateX(0) translateY(1.5rem);
+      opacity: 0;
+      visibility: hidden;
       position: absolute;
+      left: 0;
+      top: 0;
+      padding: 1.5rem;
       &[data-hidden="false"] {
-        transform: translateX(0) translateY(1rem);        
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0) translateY(4rem);        
       }
       ul {
         display: flex;
         margin: 0;
         padding: 0;
         justify-content: space-between;
-        width: 100%;
+        width: auto;
         align-items: center;        
         li {
           list-style: none;
           flex: 1;
           padding: 0;
-          text-align: center;              
+          text-align: center;
+          a {
+            padding: 1rem 0;
+            display: block;
+          }            
         }
       }  
     }

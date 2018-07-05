@@ -1,5 +1,5 @@
-<aside>
-  <button aria-expanded="false" aria-controls="secondary-navigation">
+<aside aria-label="secondary menu">
+  <button aria-haspopup="true" aria-expanded="false" aria-controls="secondary-navigation" class="🍄">
     <span aria-hidden="true">&#9776;</span>
     <p>Menu</p>
   </button>
@@ -7,7 +7,9 @@
     <ul>
       {% for item in site.data.navigation.secondary %}
         <li>
-          <a href="#{{ item.name | slugify }}"><span>{{ item.name }}</span></a>
+          <a href="#{{ item.name | slugify }}">
+            <span>{{ item.name }}</span>
+          </a>
         </li>
       {% endfor %}
     </ul>
