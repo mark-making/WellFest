@@ -26,7 +26,7 @@
   "offers": {
     "@type": "Offer",
     "@id": "{{ site.url | absolute_url }}#book",
-    "url": "https://chippywellfest18.eventbrite.co.uk",
+    "url": "{{ site.booking_link }}",
     "availability": [
       "http://schema.org/OnlineOnly",
       "http://schema.org/{{ site.data.flags.availability }}"

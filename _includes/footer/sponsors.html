@@ -1,0 +1,10 @@
+<section class="sponsors">
+  <h3>With huge thanks to our sponsors</h3>
+  <ul>
+    {% for sponsor in site.data.sponsors %}    
+    <li>
+      <a href="{{ sponsor.url }}">{{ sponsor.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

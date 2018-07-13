@@ -1,0 +1,50 @@
+.pinch {
+  &.feature {
+    font-size: 4rem;
+    justify-content: center;
+    grid: {
+      template-columns: repeat(2, 1fr);
+    }    
+    @media (min-width: 768px) {
+      display: grid;
+    }
+    svg {
+      overflow: visible;
+      grid-column: 1 / span 1;
+      align-self: center;
+      justify-self: left;
+      display: block;
+      width: 100%;
+      text {
+        height: auto;
+        fill: none;
+        stroke: $black;
+        stroke: {
+          width: 1px;
+          linecap: round;
+          linejoin: round;
+        }
+        line-height: 1;
+        white-space: nowrap;
+        font: {
+          // size: calc(8rem + 1vmin);
+          weight: bold;
+        }
+      }
+      @media (min-width: 768px) {
+      }      
+    }
+    p {
+      margin: 0;
+      grid-column: 2 / span 1;
+      align-self: center;
+      strong {
+        font-size: larger;
+        + span {
+          font-size: smaller;
+        }
+      }
+    }
+  }
+}
+

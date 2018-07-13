@@ -1,7 +1,25 @@
 <section class="pinch segment" id="join">
-  <h2>Join our community</h2>
-  <a href="#join">[ Sign up now ]</a>
-  <p>Share your journey and support others</p>
-  <p>@ChippyWellFest18 on Instagram and share your journey with #ChippyWellFest</p>
-  <p>Keep up to date with plans for the day at facebook.com/chippywellfest</p>
+  <figure>
+    <img src="https://picsum.photos/g/1160/1160/" alt="Graphic of {{ speaker.name }}">
+  </figure>  
+  <div class="content">
+    <h2>Join our community</h2>
+    <p>Hear all the latest news via your inbox</p>
+    {% include
+      /components/button.html
+      link=site.mailchimp_link
+      cta="Sign up now"
+    %}
+    <p>Share your journey and support others @ChippyWellFest18 on Instagram and share your journey with #ChippyWellFest</p>
+    <p>Keep up to date with plans for the day at facebook.com/chippywellfest</p>
+    <ul class="social-icons">
+      {% for social in site.data.social %}    
+      <li class="{{ social.name | downcase }}">
+        <a href="{{ social.url }}" target="new" rel="no-opener">
+          <span {% if social.icon %}class="sr-only"{% endif %}>{{ social.name }}</span>
+        </a>         
+      </li>
+      {% endfor %}
+    </ul> 
+  </div>
 </section>

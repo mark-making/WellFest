@@ -1,16 +1,16 @@
 //
-//  ┌──────────────────┐
-//  │ DEFINE VARIABLES │
-//  └──────────────────┘
+//  ┌───────────┐
+//  │ VARIABLES │
+//  └───────────┘
 //
 
 const gulp = require('gulp'),
       plugins = require('gulp-load-plugins')();
 
 //
-//  ┌────────────────┐
-//  │ DEFINE FOLDERS │
-//  └────────────────┘
+//  ┌─────────┐
+//  │ FOLDERS │
+//  └─────────┘
 //
 
 let paths = {
@@ -30,6 +30,11 @@ let paths = {
   }
 };
 
+//
+//  ┌───────────┐
+//  │ FUNCTIONS │
+//  └───────────┘
+//
 
 function styles() {
   return gulp.src(paths.styles.src)
@@ -42,7 +47,7 @@ function styles() {
 
 function autoprefix() {
   return gulp.src(paths.styles.dest + 'screen.min.css')
-    .pipe(plugins.autoprefixer({ browsers: ['last 2 versions','ie 8','ie 9','ie 10','iOS 7'], cascade: false }))
+    .pipe(plugins.autoprefixer({ browsers: ['last 4 versions', 'ie 8', 'ie 9', 'ie 10', 'iOS 7'], cascade: false, grid: true }))
     .pipe(plugins.rename('screen.min.prefix.css'))    
     .pipe(gulp.dest(paths.styles.dest));
 };

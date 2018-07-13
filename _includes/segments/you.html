@@ -1,9 +1,19 @@
 <section class="pinch segment" id="you">
-  <strong>
-    Take a day for you
-  </strong>
-  <p>Fast-paced, yet sedentary lifestyles are affecting our health.</p>
-  <p>Take this day for you, to step back and ask questions. What does my lifestyle look like? Why?</p>
-  <p>Eight speakers give their time for free to help you gather the skills and holistic self-knowledge you need.</p>
-  <p>Find your answers. Commit to taking the first small step towards transforming your lifestyle, health and wellbeing. Forever.</p>
+  <figure>
+    <img src="https://picsum.photos/400/600/" alt="Graphic of {{ speaker.name }}">
+  </figure>
+  <div class="content">
+    <h2>
+      Take a day for you
+    </h2>
+    <p>Fast-paced, yet sedentary lifestyles are affecting our health.</p>
+    <p>Take this day for you, to step back and ask questions. What does my lifestyle look like? Why?</p>
+    <p>Eight speakers give their time for free to help you gather the skills and holistic self-knowledge you need.</p>
+    <p>Find your answers. Commit to taking the first small step towards transforming your lifestyle, health and wellbeing. Forever.</p>
+    {% include
+      /components/button.html
+      link=site.booking_link
+      cta="Book your place"
+    %}
+  </div>
 </section>
