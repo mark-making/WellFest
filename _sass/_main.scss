@@ -165,10 +165,10 @@ header {
       text-align: left;      
       display: inline-block;
       background-color: $white;
+      margin-left: -1rem;
     }
     text-align: center;
     padding: 1rem;
-    margin-left: -1rem;
     a[href] {
       display: inline-block;
       overflow: hidden;
@@ -199,9 +199,20 @@ header {
       &[id] {
         overflow: visible;
       }
+      @media (max-width: 767px) {
+        figure {
+          height: 85vmin;
+          overflow: hidden;
+          position: relative;
+          img {
+            position: absolute;
+            object-position: 0 100%;          
+          }
+        }
+      }
       h2 {
         letter-spacing: -0.1rem;
-        margin: 0 0 calc(2.75rem + 1vmin) 0;
+        margin: 0 0 calc(0.75rem + 1vmin) 0;
         text-transform: uppercase;
         font-weight: 600;   
         line-height: 1.1;
@@ -211,11 +222,15 @@ header {
           position: relative;
           font-style: normal;
         }
-        font-size: calc(2.75rem + 1vmin);
-        @media (min-width: 768px) {
-          font: {
-            size: calc(4.2rem + 1vmin);
-          }          
+        @media (min-width: 320px) {
+          font-size: calc(2.75rem + 1vmin);
+        }
+        @media (min-width: 560px) {
+          font-size: calc(3.2rem + 1vmin);
+        }        
+        @media (min-width: 992px) {
+          font-size: calc(4.2rem + 1vmin);          
+          margin: 0 0 calc(2.75rem + 1vmin) 0;
         }
       }
       p {
@@ -234,18 +249,17 @@ header {
       }
       @import "./segment/you",
               "./segment/together",
-              "./segment/join";
-      &#help {
-        // background-color: $blue;
-      }
+              "./segment/join",
+              "./segment/help";
     }
   }
 }
 
 .button {
-  font-size: 28px;
+  font-size: calc(1rem + 1vmin);
   font-weight: 600;
   margin: 1rem 0;
-  padding: 2rem 0;
-  display: block;  
+  padding: 1rem;
+  display: inline-block;
+  position: relative;
 }

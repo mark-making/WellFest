@@ -1,49 +1,13 @@
 @charset "utf-8";
 
 //
-// ┌─────────────────┐
-// │ THEME VARIABLES │
-// └─────────────────┘
+// ┌───────────────────────┐
+// │ VARIABLES / FUNCTIONS │
+// └───────────────────────┘
 //
 
-$font-path: "../fonts"!default;
-
-$black:       rgb(35,35,35);
-$white:       rgb(255,255,255);
-$light-grey:  rgb(242,242,242);
-$yellow:      rgb(255,237,0);
-$blue:        rgb(107,212,245);
-$green:       rgb(195,243,0);
-$pink:        rgb(255,125,255);
-
-$font-os:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-$primary: $yellow;
-$secondary: $black;
-
-@import "font-face";
-
-@keyframes flash {
-  from, 50%, to { opacity: 1; }
-  25%, 75% { opacity: 0; }
-}
-
-@keyframes draw-challenge {
-  0%, from {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-  100%, to {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-}
-
-//
-// ┌───────────┐
-// │ FUNCTIONS │
-// └───────────┘
-//
-
-@import "_functions";
+@import "_variables",
+        "_functions";
 
 //
 // ┌────────────────┐
@@ -51,7 +15,8 @@ $secondary: $black;
 // └────────────────┘
 //
 
-@import "main",
+@import "font-face",
+        "main",
         "navigation",
         "speakers",
         "footer";

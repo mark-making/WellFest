@@ -28,13 +28,9 @@
   }
   .content {
     z-index: 1;
-  }  
+  }
+  @extend %desktop-only-grid-12-col;  
   @media (min-width: 768px) {
-    display: grid;
-    grid: {
-      template-columns: repeat(12, 1fr);
-      column-gap: 20px;
-    }
     figure {
       max-height: 100%;
       position: absolute;

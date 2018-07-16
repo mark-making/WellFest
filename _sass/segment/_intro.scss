@@ -20,16 +20,10 @@
         display: inline-block;
         position: relative;
         font-style: normal;
+        &::before, &::after {
+          @extend %has-decoration;
+        }
         @media (min-width: 768px) {
-          &::before, &::after {
-            pointer-events: none;
-            speak: none;
-            color: $pink;
-            position: absolute;
-            z-index: -1;
-            display: inline-block;
-            backface-visibility: visible;
-          }
           // unique
           &:nth-of-type(1) {
             padding: 0 1.5rem;

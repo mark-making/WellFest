@@ -48,4 +48,29 @@
         str-replace(str-slice($string, $index + 
         str-length($search)), $search, $replace), 
         $string); 
-}  
+}
+
+
+%has-decoration {
+  pointer-events: none;
+  speak: none;
+  position: absolute;
+  z-index: -1;
+  display: inline-block;
+  backface-visibility: visible;
+}
+
+%desktop-only-grid-12-col {
+  @media (min-width: 768px) {
+    display: grid;
+    grid: {
+      template-columns: repeat(12, 1fr);
+      column-gap: 0;
+    }
+  }
+  @media (min-width: 992px) {
+    grid: {
+      column-gap: 20px;
+    }
+  }
+}

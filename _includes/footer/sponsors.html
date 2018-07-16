@@ -2,8 +2,8 @@
   <h3>With huge thanks to our sponsors</h3>
   <ul>
     {% for sponsor in site.data.sponsors %}    
-    <li>
-      <a href="{{ sponsor.url }}">{{ sponsor.name }}</a>
+    <li class="{{ sponsor.name | slugify | downcase }}">
+      <a href="{{ sponsor.url }}" target="new" rel="no-opener"><span class="sr-only">{{ sponsor.name }}</span></a>
     </li>
     {% endfor %}
   </ul>
