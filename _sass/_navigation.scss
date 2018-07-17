@@ -3,7 +3,7 @@
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   @media (min-width: 768px) {
     align-items: flex-start;
   }
@@ -13,12 +13,14 @@ nav {
     min-height: 70px;
     top: -1px;
     position: sticky;
-    background-color: rgba($white, .95);   
+    background-color: rgba($white, .95);
+    justify-content: space-evenly;
     @media (min-width: 768px) {
       z-index: 0;
       position: fixed;
       top: 50vmin;
       background-color: transparent;
+      justify-content: space-between;
     }
     a {
       @media (min-width: 768px) {
