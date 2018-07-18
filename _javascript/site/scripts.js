@@ -10,3 +10,5 @@ if (navButton) {
         navButton.classList.toggle("active");
     });
 }
+
+objectFitImages();

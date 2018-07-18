@@ -207,7 +207,8 @@ header {
           position: relative;
           img {
             position: absolute;
-            object-position: 0 100%;          
+            object-position: 0 100%;
+            font-family: 'object-position: 0 100%;';
           }
         }
       }
@@ -217,7 +218,8 @@ header {
         text-transform: uppercase;
         font-weight: 600;   
         line-height: 1.1;
-        word-break: break-word;        
+        word-break: break-word;
+        display: inline-block;
         em {
           display: inline-block;
           position: relative;
@@ -245,7 +247,7 @@ header {
         }  
       }      
       .content {
-        align-self: center;
+        align-self: stretch;
         padding: calc(0.5rem + 1vmin);
       }
       @import "./segment/you",

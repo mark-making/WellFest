@@ -3,6 +3,7 @@
     overflow: visible;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     h1 {
       font: {
         size: 5vmin;

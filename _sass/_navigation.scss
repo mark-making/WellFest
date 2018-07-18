@@ -14,7 +14,7 @@ nav {
     top: -1px;
     position: sticky;
     background-color: rgba($white, .95);
-    justify-content: space-evenly;
+    justify-content: space-around;
     @media (min-width: 768px) {
       z-index: 0;
       position: fixed;
@@ -109,8 +109,8 @@ aside {
     cursor: pointer;
     @media (min-width: 768px) {
       padding: 1rem;
-      width: initial;
-      right: initial;
+      width: inherit;
+      right: inherit;
     }
     &:hover, &:focus {
       &[aria-expanded="false"] {

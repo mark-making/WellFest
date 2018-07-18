@@ -2,43 +2,68 @@
   @extend %desktop-only-grid-12-col;
   background-color: $pink;
   color: $white;
-  @media (min-width: 768px) {
-    figure {
-      grid-column: span 5;           
-    }
-    .content {
-      grid-column: 7 / span 5;
-    }         
-  }
-  .content {
-    span {
-      &::before, &::after {
-        @extend %has-decoration;
-        z-index: 1;
-      }
-      &:nth-of-type(1) {
-        &::before {
-          content:'1';
-        }
-      }
-      &:nth-of-type(2) {
-        &::after {
-          content:'2';
-        }
-      }      
-    }
-  }
   figure {
     padding: 0;
-    margin: 0;          
+    margin: 0;   
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      font-family: 'object-fit: cover;';
       display: block;
       filter: grayscale(1);
     }          
   }
+  .content {
+    @extend %desktop-only-grid-6-col; 
+    z-index: 1;
+    @supports (display: grid) {
+      * {
+        grid-column: 1 / span 6;
+      }
+    } 
+    span {
+      position: relative;
+      display: inline-block;
+      &::before, &::after {
+        @extend %has-decoration;
+        transform-origin: center;
+        z-index: 1;
+      }
+      &:nth-of-type(1) {
+        &::before {
+          content: '';
+          left: 0;
+          bottom: 0;
+          transform: translate(-2.8rem, 0.5rem) perspective(0);
+          width: 100%;
+          height: 104px;          
+          background: {
+            image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="104"><path fill="#ffed00" d="M36.315 15.19335A51.15908 51.15908 0 0 0 18.13728 1.68922C14.8578.24985 11.01216.72766 9.05716 4.07011c-1.64724 2.81627-.91824 7.63213 2.38089 9.08012a42.38566 42.38566 0 0 1 15.4914 11.42868c2.33647 2.72072 6.98644 2.39912 9.38556 0 2.697-2.697 2.34226-6.65811 0-9.38556zM30.02868 40.30937L6.36185 42.38708c-8.44329.74123-8.52156 14.0213 0 13.27319l23.66683-2.07771c8.44329-.74123 8.52156-14.0213 0-13.27319zM29.48341 75.85893A80.91881 80.91881 0 0 0 4.52814 91.83426c-6.225 5.87535 3.17318 15.249 9.38557 9.38556A63.31231 63.31231 0 0 1 33.012 88.658c3.296-1.36688 5.68756-4.40633 4.63526-8.1638-.87389-3.12043-4.82117-6.02148-8.1638-4.63526z"/></svg>');
+            repeat: no-repeat;
+            size: contain;
+            position-x: left;
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        &::after {
+          content: '';
+          right: 0;
+          bottom: 0;
+          transform: translate(2.8rem, 0.5rem) perspective(0) rotateY(180deg) rotateX(-180deg);
+          width: 100%;
+          height: 104px;          
+          background: {
+            image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="104"><path fill="#ffed00" d="M36.315 15.19335A51.15908 51.15908 0 0 0 18.13728 1.68922C14.8578.24985 11.01216.72766 9.05716 4.07011c-1.64724 2.81627-.91824 7.63213 2.38089 9.08012a42.38566 42.38566 0 0 1 15.4914 11.42868c2.33647 2.72072 6.98644 2.39912 9.38556 0 2.697-2.697 2.34226-6.65811 0-9.38556zM30.02868 40.30937L6.36185 42.38708c-8.44329.74123-8.52156 14.0213 0 13.27319l23.66683-2.07771c8.44329-.74123 8.52156-14.0213 0-13.27319zM29.48341 75.85893A80.91881 80.91881 0 0 0 4.52814 91.83426c-6.225 5.87535 3.17318 15.249 9.38557 9.38556A63.31231 63.31231 0 0 1 33.012 88.658c3.296-1.36688 5.68756-4.40633 4.63526-8.1638-.87389-3.12043-4.82117-6.02148-8.1638-4.63526z"/></svg>');
+            repeat: no-repeat;
+            size: contain;
+            position-x: left;
+          }
+        }
+      }      
+    }
+  }  
   .button {
     &.yellow-scribble {
       color: $white;
@@ -62,4 +87,26 @@
       }       
     }
   }
+  @media (min-width: 768px) {
+    height: auto;
+    figure {
+      @supports (display: grid) {
+        grid-column: 1 / span 5;
+      }
+      order: 0;
+      flex: 1 1 auto;
+      align-self: stretch;      
+    }
+    .content {
+      @supports (display: grid) {
+        grid-column: 7 / span 5;
+      }
+      padding: 7rem calc(0.5rem + 1vmin);
+      order: 0;
+      flex: 1 3 auto;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;      
+    }         
+  }  
 }
