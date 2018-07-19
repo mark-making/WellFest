@@ -1,4 +1,5 @@
-var navButton = document.querySelector("aside button"),
+var navAside = document.querySelector("aside"),
+    navButton = document.querySelector("aside button"),
     disciplineMenu = document.getElementById("secondary-navigation");
 
 if (navButton) {
@@ -8,6 +9,7 @@ if (navButton) {
         var visible = disciplineMenu.getAttribute("data-hidden") === "true" || false;
         disciplineMenu.setAttribute("data-hidden", !visible);
         navButton.classList.toggle("active");
+        navAside.classList.toggle("open");
     });
 }
 
