@@ -22,7 +22,12 @@ html {
     background-color: $yellow; /* 1 */
     color: #000; /* 1 */
     text-shadow: none;
-  }  
+  }
+  // *:empty {
+  //   &:not(path), &:not(br) {
+  //     display: none;
+  //   }
+  // }
 }
 
 main,
@@ -99,7 +104,7 @@ ul.social-icons {
 * {
   box-sizing: border-box;
   background-clip: padding-box;
-  &:not(#top) {
+  &:not(#top):not(#main) {
     &:target {
       outline: 4px solid DodgerBlue;
       outline-offset: -4px;
@@ -126,16 +131,6 @@ svg {
   }  
 }
 
-h1.feature {
-
-  b {
-
-  }
-  em {
-     
-  }
-}
-
 header, [aria-label="content"], footer {
   @media screen and (orientation:portrait) {
     width: 85vmin;
@@ -157,7 +152,6 @@ header {
     }    
   }
   position: relative;
-  height: 190px;
   top: -1px;
   background-color: rgba($white, .95); 
   z-index: 5;
@@ -165,16 +159,17 @@ header {
     @media (min-width: 768px) {
       text-align: left;      
       display: inline-block;
-      background-color: $white;
       margin-left: -1rem;
     }
     text-align: center;
     padding: 1rem;
     a[href] {
-      display: inline-block;
       overflow: hidden;
       line-height: 0;
       vertical-align: middle;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -265,4 +260,5 @@ header {
   padding: 1rem;
   display: inline-block;
   position: relative;
+  color: currentColor;
 }

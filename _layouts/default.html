@@ -2,9 +2,11 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}" class="{{ page.layout }} {% if jekyll.environment == 'production' %}production{% else %}development{% endif %}" id="top">
   {% include head.html %}
   <body>
-    <a href="#main">Skip to main content</a>
+    <nav aria-label="page">
+      <a href="#main">Skip to main content</a>
+    </nav>
     {% include header.html %}
-    {% include /navigation/secondary.html %}
+    {% comment %} {% include /navigation/secondary.html %} {% endcomment %}
     <main id="main" aria-label="content">
     {{ content }}
     </main>

@@ -7,6 +7,32 @@ nav {
   @media (min-width: 768px) {
     align-items: flex-start;
   }
+  &[aria-label="page"] {
+    position: absolute;
+    left: -100vw;
+    top: 0;
+    height: auto;
+    background-color: aquamarine;   
+    a[href] {
+      display: inline-block;
+      background-color: $white;
+      color: $secondary;
+      width: 100vw;
+      text-align: center;
+      border-bottom: solid 5px $yellow;
+      outline: none;      
+      padding: 1rem;
+      transition: 150ms 0 ease;
+      text: {
+        transform: capitalize;
+        decoration: none;
+      }
+      z-index: 10;
+      &:focus {
+        transform: translate(100vw);
+      }
+    }
+  }
   &[aria-label="main"] {
     z-index: 2;
     width: 100vw;
@@ -70,166 +96,6 @@ nav {
         display: inline-block;
         padding: 1rem calc(0.5rem + 1vmin);
       }
-    }
-  }
-}
-
-// Flyout menu
-
-aside {
-  z-index: 5;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  width: 100%;
-  float: left;
-  @media (min-width: 768px) {
-    background-color: rgba($white, .55);
-    align-items: center;
-    flex-direction: column;
-    width: auto;
-    position: fixed;
-    top: initial;
-    transition: all .5s .3ms ease;
-    transition-property: background-color;    
-    &.open {
-      background-color: rgba($white, .97);
-    }
-  }
-  button[aria-controls="secondary-navigation"] {
-    position: relative;
-    z-index: 2;
-    border: 0;
-    text-align: center;
-    font-size: 2rem;
-    transition: .5s .3ms ease;
-    transition-property: width, color, transform, background-color;
-    background-color: rgba($white, .55);
-    width: 75px;
-    padding: 0.5rem;
-    display: block;
-    cursor: pointer;
-    order: 1;
-    @media (min-width: 768px) {
-      padding: 1rem;
-      width: inherit;
-      right: inherit;
-      transition-property: color, transform, background-color;
-    }
-    &:hover, &:focus {
-      &[aria-expanded="false"] {
-        [aria-hidden="true"] {
-          color: $blue;
-          transform-origin: center;
-          transform: scale(1.2) rotate3d(0, 0, 1, 90deg);
-        }
-      }
-    }
-    p {
-      font-size: .8rem;
-      letter-spacing: .1rem;
-      text-transform: uppercase;      
-      margin: 0;
-    }
-    [aria-hidden="true"] {
-      transition: all .5s .3ms ease;
-      display: inline-block;
-      line-height: 1;
-      will-change: transform;
-    }
-    &[aria-expanded="false"] {
-      [aria-hidden="true"] {
-        color: $black;
-      }
-    }
-    &[aria-expanded="true"] {
-      order: 2;
-      background-color: $blue;
-      width: 20%;
-      @media (min-width: 768px) {
-        order: 1;
-        width: 100%;
-      }
-      [aria-hidden="true"] {
-        color: $white;
-      }
-    }     
-    ~ nav[aria-label="secondary"] {
-      z-index: 0;
-      transition: all .5s .3ms ease;
-      transition-property: visibility, transform, opacity;
-      opacity: 0;
-      visibility: hidden;
-      padding: 0;
-      width: 80%;
-      background-color: $white;
-      order: 2;
-      flex: 1 1 auto;
-      @media (min-width: 768px) {
-        width: 100%;
-        transform: translateX(0) translateY(1.5rem);
-        writing-mode: vertical-lr;
-        background-color: transparent;
-        &[data-hidden="false"] {
-          opacity: 1;
-          visibility: visible;
-          transform: translateX(0) translateY(4rem);        
-        }
-      }
-      &[data-hidden="true"] {
-        order: 0;
-        opacity: 0;
-        position: absolute;
-        visibility: hidden;
-        transform: translateX(-100vw) translateY(0);        
-      }      
-      &[data-hidden="false"] {
-        order: 1;
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0) translateY(0);        
-      }      
-      ul {
-        display: flex;
-        margin: 0;
-        padding: 0;
-        justify-content: space-between;
-        flex-basis: 100%;
-        width: 100%;
-        align-items: stretch;        
-        li {
-          list-style: none;
-          flex: 1;
-          padding: 0;
-          text-align: center;
-          a {
-            text-decoration: none;
-            padding: calc(1.55rem + 1vmax) 0;
-            display: flex;
-            width: 100%;
-            height: auto;
-            color: $black;
-            vertical-align: top;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            text-transform: uppercase;
-            font-weight: 400;
-            letter-spacing: .2rem;
-            &:hover, &:focus {
-              background-color: $green;
-            }
-            span {
-              line-height: 1;
-              font: {
-                size: calc(.6rem + 1vmin);
-              }              
-            }
-          }            
-        }
-      }  
     }
   }
 }
