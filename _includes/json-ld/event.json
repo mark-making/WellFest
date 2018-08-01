@@ -37,11 +37,21 @@
     "priceCurrency": "GBP"
   },
   "organizer": { "@id": "{{ site.url | absolute_url }}#nick-parker" },
+  "sponsor": [
+  {%- for sponsor in site.data.sponsors %}
+    {
+      "@type": "Organization",
+      "name": "{{sponsor.name}}",
+      "url": "{{ sponsor.url }}",
+      "logo": "http://www.example.com/images/logo.png"
+    }{% unless forloop.last %},{% endunless %}
+  {%- endfor %}
+  ],  
   "image": [
     "https://example.com/photos/1x1/photo.jpg",
     "https://example.com/photos/4x3/photo.jpg",
     "https://example.com/photos/16x9/photo.jpg"
-  ],  
+  ], 
   "subEvent": [
   {%- for speaker in site.data.speaker-profiles.speaker %}
     {

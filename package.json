@@ -11,7 +11,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "browser-sync": "2.24.5",
+    "browser-sync": "2.24.6",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
@@ -20,9 +20,10 @@
     "gulp-imagemin": "latest",
     "gulp-load-plugins": "latest",
     "gulp-newer": "latest",
-    "gulp-rename": "1.3.0",
+    "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.1",
     "gulp-sourcemaps": "latest",
-    "gulp-uglify": "latest"
+    "gulp-uglify": "3.0.1",
+    "gulp-webp": "latest"
   }
 }

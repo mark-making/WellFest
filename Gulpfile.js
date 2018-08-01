@@ -14,6 +14,10 @@ const gulp = require('gulp'),
 //
 
 let paths = {
+  data: {
+    src: '_data/speaker-profiles.json',
+    dest: '_site/js/'
+  },  
   styles: {
     src: '_sass/**/*.scss',
     dest: '_site/css/'
@@ -27,7 +31,12 @@ let paths = {
       src: '_javascript/service-worker.js',
       dest: '_site/'
     }
-  }
+  },
+  images: {
+    webp: '_site/img/**/*.{jpg,jpeg}',
+    src: 'img/**/*.{png,gif,jpg,jpeg}',
+    dest: '_site/img/'
+  },
 };
 
 //
@@ -66,13 +75,30 @@ function service_worker() {
     .pipe(gulp.dest(paths.scripts.sw.dest));
 }
 
+function images_webp() {
+  return gulp.src(paths.images.webp)
+    .pipe(plugins.webp({ preset: 'photo' }))  
+    .pipe(gulp.dest(paths.images.dest));
+}
+
+function image_process() {
+  return gulp.src(paths.images.src)
+    .pipe(plugins.imagemin({ progressive: true }))  
+    .pipe(gulp.dest(paths.images.dest));
+}
+
+function copy_json() {
+  return gulp.src(paths.data.src).pipe(gulp.dest(paths.data.dest));
+}
+
 function watch() {
   gulp.watch(paths.scripts.site.src, site_scripts);
   gulp.watch(paths.scripts.sw.src, service_worker);
   gulp.watch(paths.styles.src, gulp.series(styles, autoprefix));
+  gulp.watch(paths.images.src, gulp.series(image_process, images_webp));
 };
 
-let build = gulp.parallel(gulp.series(styles, autoprefix), gulp.series(site_scripts, service_worker), watch);
+let build = gulp.parallel(gulp.series(styles, autoprefix), gulp.series(site_scripts, service_worker), gulp.series(image_process, images_webp), copy_json, watch);
 
 gulp.task(build);
 

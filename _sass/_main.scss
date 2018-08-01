@@ -104,7 +104,7 @@ ul.social-icons {
 * {
   box-sizing: border-box;
   background-clip: padding-box;
-  &:not(#top):not(#main) {
+  &:not(#top):not(#main):not(#speakers) {
     &:target {
       outline: 4px solid DodgerBlue;
       outline-offset: -4px;
@@ -181,8 +181,8 @@ header {
           "./segment/nine";
   .pinch {
     width: inherit;
-    margin: 7rem auto;
     overflow: hidden;
+    margin: calc(10% + 1vmin) auto;
     @media (min-width: 768px) {
       &.introduction,
       &.feature {
@@ -202,7 +202,7 @@ header {
           position: relative;
           img {
             position: absolute;
-            object-position: 0 100%;
+            object-position: 100%;
             font-family: 'object-position: 0 100%;';
           }
         }
@@ -221,7 +221,7 @@ header {
           font-style: normal;
         }
         @media (min-width: 320px) {
-          font-size: calc(2.75rem + 1vmin);
+          font-size: calc(2.45rem + 1vmin);
         }
         @media (min-width: 560px) {
           font-size: calc(3.2rem + 1vmin);
@@ -247,6 +247,7 @@ header {
       }
       @import "./segment/you",
               "./segment/together",
+              "./segment/find",
               "./segment/join",
               "./segment/help";
     }
@@ -261,4 +262,8 @@ header {
   display: inline-block;
   position: relative;
   color: currentColor;
+  &:focus {
+    outline-style: dashed;
+    outline-width: 2px;    
+  }
 }

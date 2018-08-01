@@ -24,10 +24,10 @@ footer {
       position: relative;
       font-style: normal;
       font-weight: 600;
-      &::after {
+      &:after {
         @extend %has-decoration;
       }      
-      &::after {
+      &:after {
         content: '';
         z-index: 0;        
         left: 0;
@@ -47,7 +47,7 @@ footer {
       &:hover, &:focus {
         strong {
           color: $pink;
-          &::after {
+          &:after {
             background: {
               image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="147" height="7"><path fill="#000000" d="M145 0H5.8C4.2 0 3.7 1.5 4.1 2.7c-.7.1-1.4.2-2.1.2C.9 3 0 3.9 0 5c0 1 1 2.1 2.1 2 17.8-1.8 35.6-2.4 53.5-2.7 5.1-.1 84.4-.2 89.5-.2 2.6-.1 2.5-4.1-.1-4.1z"/></svg>');
             }
@@ -187,17 +187,31 @@ footer {
   .auxiliary {
     padding: 1rem;  
     background-color: $yellow;
-    @media (min-width: 768px) {
+    .items {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-    }
-    address {
-      display: inline-block; 
-      font-style: normal;     
-    }
-    p {
-      margin: 0;
+      justify-content: space-around;
+      margin: auto;
+      max-width: 70vw;
+      height: 10vmax;
+      flex-direction: column;
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+      }
+      address {
+        display: inline-block; 
+        font-style: normal;     
+      }
+      p {
+        margin: 0;
+      }
+      @media (min-width: 768px) {
+        .details {
+          text-align: right;
+        }
+      }      
     }
   }
 }

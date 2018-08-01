@@ -1,6 +1,13 @@
 <section class="pinch segment" id="you">
   <figure>
-    <img src="https://picsum.photos/400/600/" alt="Graphic of {{ speaker.name }}">
+    <picture>
+      {% include
+        /segments/image.html
+        segment="you"
+        format="jpg"
+        has-webp=true
+      %}
+    </picture>
   </figure>
   <div class="content">
     <h2>
