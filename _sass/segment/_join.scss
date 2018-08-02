@@ -18,7 +18,8 @@
   .content {
     @extend %desktop-only-grid-6-col;
     z-index: 1;
-    background-color: rgba($yellow,.8);   
+    background-color: rgba($yellow,.8);
+    padding: $content-box-padding;   
   }
   @media (min-width: 768px) {
     height: auto;
@@ -57,7 +58,6 @@
           }
         }
       }
-      padding: $content-box-padding;
       flex-basis: calc(100% / 2);
       align-self: center;
       display: flex;

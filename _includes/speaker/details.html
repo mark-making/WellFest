@@ -1,4 +1,5 @@
-<div role="region" aria-label="speakers" tabindex="0" id="speakers">
+<section aria-label="speakers" aria-labelledby="the-speakers-and-their-stories" tabindex="0" id="speakers">
+  <h2 id="the-speakers-and-their-stories">The speakers and their stories</h2>
   <div class="image-slider-wrapper">
     <div class="swiper-container image-slider">
       <div class="swiper-wrapper">
@@ -22,19 +23,20 @@
       </div>
     </div>
   </div>
+  <div class="details-date-wrapper">
+    <h3>{{site.event_date}}</h3>
+  </div>
   <nav>
     <button class="swiper-button-prev" tabindex="1"><span class="sr-only">Previous</span></button>
     <ul class="swiper-pagination timings"></ul>
-    <button class="swiper-button-next" tabindex="1">Next</button>
+    <button class="swiper-button-next" tabindex="1"><span class="sr-only">Next</span></button>
   </nav>
   <div class="details-slider-wrapper">
     <div class="swiper-container details-slider">
       <div class="swiper-wrapper">
           {% for speaker in site.data.speaker-profiles.speaker %}    
-            <div class="swiper-slide" id="{{ speaker.name | slugify }}">
+            <div class="swiper-slide speaker-details" id="{{ speaker.name | slugify }}">
               <strong>{{ speaker.name }}</strong>
-              <br>
-              {{speaker.time}}
               <br>
               <em>{{ speaker.role }}</em>
               <p>
@@ -52,4 +54,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>

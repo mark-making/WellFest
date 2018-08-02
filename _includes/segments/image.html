@@ -1,15 +1,13 @@
-<!--[if IE 9]><video style="display: none;"><![endif]-->
-  {%- if include.has-webp == true -%}
-    <source type="image/webp"
-            srcset="/img/{{include.segment}}-36.webp 640w,
-                    /img/{{include.segment}}-72.webp 1200w,
-                    /img/{{include.segment}}-96.webp 1440w,
-                    /img/{{include.segment}}-150.webp 1680w"/>
-  {%- endif -%}
-  <source type="image"
-          srcset="/img/{{include.segment}}-36.{{include.format}} 640w,
-                  /img/{{include.segment}}-72.{{include.format}} 1200w,
-                  /img/{{include.segment}}-96.{{include.format}} 1440w,
-                  /img/{{include.segment}}-150.{{include.format}} 1680w"/>
-<!--[if IE 9]></video><![endif]-->
-<img srcset="/img/{{include.segment}}-36.{{include.format}}" alt="{{include.alt}}">
+{%- if include.has-webp == true -%}
+<source type="image/webp"
+        srcset="/img/{{include.segment}}-36.webp 244w,
+                /img/{{include.segment}}-72.webp 488,
+                /img/{{include.segment}}-96.webp 650w,
+                /img/{{include.segment}}-150.webp 1020w"/>
+{%- endif -%}
+<source type="image/{{include.format}}"
+        srcset="/img/{{include.segment}}-36.{{include.format}} 244w,
+                /img/{{include.segment}}-72.{{include.format}} 488,
+                /img/{{include.segment}}-96.{{include.format}} 650w,
+                /img/{{include.segment}}-150.{{include.format}} 1020w"/>
+<img src="/img/{{include.segment}}-150.{{include.format}}" alt="{{include.alt}}">

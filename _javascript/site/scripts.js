@@ -1,3 +1,5 @@
+// http://idangero.us/swiper/api/
+
 fetch('./js/speaker-profiles.json')
 
 .then(function(response) {
@@ -5,47 +7,50 @@ fetch('./js/speaker-profiles.json')
 })
 
 .then(function(data) {
-
-  var imageSwiper = new Swiper('.image-slider', {
-    slidesPerView: 2,
-    spaceBetween: 10,
-    initialSlide: 2,
-    roundLengths: true,
-    centeredSlides: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<li class="' + className + '">' + (data.speaker[index].time) + '<br/>' + (data.speaker[index].name) + '</li>';
-      },
-    },  
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      // when window width is <= 320px
-      768: {
-        slidesPerView: 1,
-        spaceBetween: 10
-      }
-    }    
-  });
+  var startSlide = 1,
+      imageSwiper = new Swiper('.image-slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 5,
+        initialSlide: startSlide,
+        centeredSlides: false,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<li class="' + className + '">' + (data.speaker[index].time) + '</li>';
+          },
+        },  
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },      
+        breakpoints: {
+          // when window width is less than or equal to 768px
+          768: {
+            spaceBetween: 0,
+            allowTouchMove: true,
+          }
+        }    
+      });
 
   var speakerInfo = new Swiper('.details-slider', {
-    initialSlide: 2,
+    initialSlide: startSlide,
     spaceBetween: 20,
+    allowTouchMove: false,
+    autoHeight: true,
+    breakpoints: {
+      // when window width is less than or equal to 768px
+      768: {
+        allowTouchMove: true,
+      }
+    }    
   });
 
   speakerInfo.controller.control = imageSwiper;
   imageSwiper.controller.control = speakerInfo;
 
-  console.log(data);
+  // console.log(data);
 
 });
-
-
-// (index + 1)
-
 
 objectFitImages();
