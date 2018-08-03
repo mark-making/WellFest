@@ -46,9 +46,19 @@
               <br>
               {{ speaker.info -}}
               </p>
-              {%- for social in speaker.social -%}
-              <a href="https://twitter.com/{{- social.twitter -}}">@{{social.twitter}}</a>            
-              {%- endfor -%}
+              {%- if speaker.social -%}
+                <ul class="social-icons">
+                  {%- for social in speaker.social -%}
+                    {% for platform in social %}                                  
+                    <li class="{{ platform[0] | downcase }}">
+                      <a href="{% if platform[0] == 'facebook' %}http://fb.com/{{ platform[1] }}{% else %}http://ig.com/{{ platform[1] }}{% endif %}" target="new" rel="no-opener">
+                        <span {% if platform[0] %}class="sr-only"{% endif %}>{{ platform[1] }}</span>
+                      </a>         
+                    </li>
+                    {% endfor %}
+                  {% endfor %}
+                </ul>
+              {%- endif -%}
             </div>
           {% endfor %}
       </div>

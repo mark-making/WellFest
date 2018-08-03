@@ -23,6 +23,9 @@ html {
     color: #000; /* 1 */
     text-shadow: none;
   }
+  address {
+    font-style: normal;
+  }
   // *:empty {
   //   &:not(path), &:not(br) {
   //     display: none;
@@ -40,12 +43,15 @@ iframe {
 ul.social-icons {
   display: flex;
   width: 11rem;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   list-style: none;
   padding: 0;
   margin: 0;
   li {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
     a {
       display: block;
     }
@@ -160,9 +166,14 @@ header {
       text-align: left;      
       display: inline-block;
       margin-left: -1rem;
+      svg {
+        height: 170px;
+        transition: all .5s .3ms ease;
+        transition-property: height; 
+      }
       &.smaller {
         svg {
-          height: 50%;
+          height: 100px;
         }
       }
     }

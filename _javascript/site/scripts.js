@@ -53,4 +53,22 @@ fetch('./js/speaker-profiles.json')
 
 });
 
+var scrollpos = window.scrollY,
+    header = document.getElementById('site-logo'),
+    header_height = 50,
+    add_class_on_scroll = function add_class_on_scroll() {
+      return header.classList.add('smaller');
+    },
+    remove_class_on_scroll = function remove_class_on_scroll() {
+      return header.classList.remove('smaller');
+    };
+    window.addEventListener('scroll', function () {
+      scrollpos = window.scrollY;
+      if (scrollpos >= header_height) {
+        add_class_on_scroll();
+      } else {
+        remove_class_on_scroll();
+      }
+    });
+
 objectFitImages();

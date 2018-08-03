@@ -50,12 +50,12 @@
       bottom: 0;
       transform: translate(0, 2.5rem) perspective(0);
       width: 90%;
-      height: 20px; 
+      height: 26px; 
       margin: 0 auto;         
       background: {
         image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="767.3" height="21.1"><path fill="#c3f300" d="M761.2 0H439.8C268.2 0 87.4 0 60.5.1h-43c-4.8 0-6.6 4.6-5.4 8.1-2 .2-4.1.4-6.1.6-3.3.3-6 2.8-5.9 6.3.1 3.1 3 6.3 6.3 5.9 53.6-5.4 107.4-7.2 161.2-8.1 15.2-.3 578.8-.5 594.1-.7 7.7-.1 7.4-12.2-.5-12.2z"/></svg>');
         repeat: no-repeat;
-        size: 100% 100%;
+        size: contain;
         position-x: center;
       }
     }
@@ -75,7 +75,7 @@
         &:hover, &:focus, &-active  {
           outline: none;
           opacity: 1;
-          transform: scale(2.3);
+          transform: scale(1.85);
         }
         &-active {
           font-weight: bold;
