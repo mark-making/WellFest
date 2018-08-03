@@ -39,6 +39,9 @@
       }
     }
     z-index: 1;
+    strong {
+      color: $yellow;
+    }
     h2 {
       em {
         display: inline-block;

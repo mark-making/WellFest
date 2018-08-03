@@ -159,9 +159,9 @@ header {
   }
   position: relative;
   top: -1px;
-  background-color: rgba($white, .95); 
   z-index: 5;
   .logo {
+    background-color: rgba($white, .65); 
     @media (min-width: 768px) {
       text-align: left;      
       display: inline-block;

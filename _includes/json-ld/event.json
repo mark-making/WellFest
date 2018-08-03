@@ -48,9 +48,8 @@
   {%- endfor %}
   ],  
   "image": [
-    "https://example.com/photos/1x1/photo.jpg",
-    "https://example.com/photos/4x3/photo.jpg",
-    "https://example.com/photos/16x9/photo.jpg"
+    "{{site.url}}/img/1x1-site-logo.png",
+    "{{site.url}}/img/16x9-site-logo.png"
   ], 
   "subEvent": [
   {%- for speaker in site.data.speaker-profiles.speaker %}
@@ -64,14 +63,14 @@
       "isAccessibleForFree": true,
       "location": { "@id": "{{ site.url | absolute_url }}#venue" },
       "offers": { "@id": "{{ site.url | absolute_url }}#book" },
-      "image": "https://source.unsplash.com/150x150/?face",
+      "image": "{{site.url}}/img/{{ speaker.name | replace: ' ', '-' | downcase | append:'-96' | url_encode }}.jpg",
       "performer": {
         "@type": "Person",
         "@id": "{{ site.url | absolute_url }}{{ speaker.name | slugify | prepend: '#' }}",
         "name": "{{ speaker.name }}",
         "gender": "https://schema.org/{{ speaker.gender }}",
         "jobTitle": "{{ speaker.role }}",
-        "image": "http://via.placeholder.com/250?text={{ speaker.name | url_encode }}",
+        "image": "{{site.url}}/img/{{ speaker.name | replace: ' ', '-' | downcase | append:'-96' | url_encode }}.jpg",
         "sameAs": [
         {%- for social in speaker.social %}
           "https://twitter.com/{{social.twitter}}"{% unless forloop.last %},{% endunless %}

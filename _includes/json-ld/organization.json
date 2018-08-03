@@ -6,5 +6,5 @@
     "@id": "{{ site.url | absolute_url }}#main-event"
   },
   "url": "{{ site.url | absolute_url }}",
-  "logo": "http://www.example.com/images/logo.png"  
+  "logo": "{{site.url}}/img/site-logo.png"  
 }
