@@ -1,0 +1,13 @@
+{%- if include.has-webp == true -%}
+<source type="image/webp"
+        srcset="/img/{{include.segment}}-36.webp 244w,
+                /img/{{include.segment}}-72.webp 488w,
+                /img/{{include.segment}}-96.webp 650w,
+                /img/{{include.segment}}-150.webp 1020w"/>
+{%- endif -%}
+<source type="image/{{include.format}}"
+        srcset="/img/{{include.segment}}-36.{{include.format}} 244w,
+                /img/{{include.segment}}-72.{{include.format}} 488w,
+                /img/{{include.segment}}-96.{{include.format}} 650w,
+                /img/{{include.segment}}-150.{{include.format}} 1020w"/>
+<img src="/img/{{include.segment}}-150.{{include.format}}" alt="{{include.alt}}">

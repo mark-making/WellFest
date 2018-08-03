@@ -1,26 +1,67 @@
-<div role="region" aria-label="speakers" tabindex="0" id="speakers">
-  <ul>
-    {% for speaker in site.data.speaker-profiles.speaker %}    
-      <li>
-        <div tabindex="0" id="{{ speaker.name | slugify }}">
-          <figure>
-            <img src="https://via.placeholder.com/250?text={{ speaker.name }}" alt="Graphic of {{ speaker.name }}">          
-            <figcaption>
+<section aria-label="speakers" aria-labelledby="the-speakers-and-their-stories" tabindex="0" id="speakers">
+  <h2 id="the-speakers-and-their-stories">The speakers and their stories</h2>
+  <div class="image-slider-wrapper">
+    <div class="swiper-container image-slider">
+      <div class="swiper-wrapper">
+          {% for speaker in site.data.speaker-profiles.speaker %}    
+            <div class="swiper-slide">
+              <figure>
+                <picture>
+                  {%- assign speakerIMG = speaker.name | downcase | slugify -%}
+                  {%- assign speakerALT = speaker.name | prepend: 'Portrait shot of ' -%}
+                  {% include
+                    /segments/image.html
+                    segment=speakerIMG
+                    format="jpg"
+                    alt=speakerALT
+                    has-webp=true
+                  %}
+                </picture>
+              </figure>
+            </div>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="details-date-wrapper">
+    <h3>{{site.event_date}}</h3>
+  </div>
+  <nav>
+    <button class="swiper-button-prev" tabindex="1"><span class="sr-only">Previous</span></button>
+    <ul class="swiper-pagination timings"></ul>
+    <button class="swiper-button-next" tabindex="1"><span class="sr-only">Next</span></button>
+  </nav>
+  <div class="details-slider-wrapper">
+    <div class="swiper-container details-slider">
+      <div class="swiper-wrapper">
+          {% for speaker in site.data.speaker-profiles.speaker %}    
+            <div class="swiper-slide speaker-details" id="{{ speaker.name | slugify }}">
               <strong>{{ speaker.name }}</strong>
               <br>
               <em>{{ speaker.role }}</em>
-            </figcaption>
-          </figure>
-          <p>
-            <b>{{ speaker.title }}</b>
-            <br>
-            {{ speaker.info -}}
-          </p>
-          {%- for social in speaker.social -%}
-            <a href="https://twitter.com/{{- social.twitter -}}">@{{social.twitter}}</a>            
-          {%- endfor -%}
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+              <p>
+              <b>{{ speaker.title }}</b>
+              <br>
+              {{speaker.time}}
+              <br>
+              {{ speaker.info -}}
+              </p>
+              {%- if speaker.social -%}
+                <ul class="social-icons">
+                  {%- for social in speaker.social -%}
+                    {% for platform in social %}                                  
+                    <li class="{{ platform[0] | downcase }}">
+                      <a href="{% if platform[0] == 'facebook' %}http://fb.com/{{ platform[1] }}{% else %}http://ig.com/{{ platform[1] }}{% endif %}" target="new" rel="no-opener">
+                        <span {% if platform[0] %}class="sr-only"{% endif %}>{{ platform[1] }}</span>
+                      </a>         
+                    </li>
+                    {% endfor %}
+                  {% endfor %}
+                </ul>
+              {%- endif -%}
+            </div>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

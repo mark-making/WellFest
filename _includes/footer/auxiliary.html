@@ -1,20 +1,22 @@
 <section class="auxiliary">
-  <div>
-    <ul class="social-icons">
-      {% for social in site.data.social %}    
-      <li class="{{ social.name | downcase }}">
-        <a href="{{ social.url }}" target="new" rel="no-opener">
-          <span {% if social.icon %}class="sr-only"{% endif %}>{{ social.name }}</span>
-        </a>         
-      </li>
-      {% endfor %}
-    </ul>    
-  </div>
-  <div>
-    &#169; {{site.title | append: ':'}}
-    <address>
-      Address
-    </address>
-    <p>Charity no</p>
-  </div>
+  <div class="items">
+    <div class="connect">
+      <ul class="social-icons">
+        {% for social in site.data.social %}    
+        <li class="{{ social.name | downcase }}">
+          <a href="{{ social.url }}" target="new" rel="no-opener">
+            <span {% if social.icon %}class="sr-only"{% endif %}>{{ social.name }}</span>
+          </a>         
+        </li>
+        {% endfor %}
+      </ul>    
+    </div>
+    <div class="details">
+      &#169; {{site.title | append: ':'}}
+      <address>
+        Address
+      </address>
+      <p>Charity no</p>
+    </div>
+  </div>    
 </section>

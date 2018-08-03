@@ -1,6 +1,12 @@
 <section class="pinch segment" id="help">
   <figure>
-    <img src="https://picsum.photos/g/1160/1160/" alt="Graphic of {{ speaker.name }}">
+    <picture>
+      {% include
+        /segments/image.html
+        segment="help"
+        format="png"
+      %}
+    </picture>
   </figure>  
   <div class="content">
     <h2>How you can help</h2>
@@ -10,6 +16,7 @@
       /components/button.html
       link=site.donate_link
       cta="Donate"
+      class="blue-surprise"
     %}
   </div>
 </section>

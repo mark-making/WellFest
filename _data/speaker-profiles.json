@@ -1,0 +1,119 @@
+{
+  "heading": "9 speakers. 9 stories about different ways to be well.",
+  "speaker": [
+    {
+      "name": "Nick Parker",
+      "gender": "Male",
+      "role": "Cancer Thriver",
+      "title": "Anti Death Sentence",
+      "time": "11:00",
+      "email": "user.email",
+      "social": [
+        {
+          "facebook": "@nick-parker",
+          "instagram": "@nick-parker"
+        }
+      ],
+      "info": "A real case insight on how the specifics of living the right lifestyle choices can give our bodies everything they need to reverse a chronic health condition.\n"
+    },
+    {
+      "name": "TBC1",
+      "gender": "Male",
+      "role": "TBC",
+      "title": "NHS The Future",
+      "time": "12:00",
+      "email": "user.email",
+      "social": [
+        {
+          "facebook": "@TBC1",
+          "instagram": "@TBC1"
+        }
+      ],
+      "info": "We love our NHS, but we are asking it to do things that it was never designed to do. Learn about new public healthcare and its implications on how we must manage our future health.\n"
+    },
+    {
+      "name": "Juliet Norman",
+      "gender": "Female",
+      "role": "Nutritionist",
+      "title": "One Diet Bunkum",
+      "time": "13:00",
+      "email": "user.email",
+      "social": [
+        {
+          "facebook": "facebook"
+        }
+      ],
+      "info": "There is so much dietary advice ‘out there’, much of it ill-informed, old hat or with hidden bias. And there is so much more than what you put into your mouth, or don’t! Learn the rock solid foundations on which to build your bio-individual nutrition plan.\n"
+    },
+    {
+      "name": "Nikki Jackson",
+      "gender": "Female",
+      "role": "Mindfulness Teacher",
+      "title": "Get Head Strong",
+      "time": "14:00",
+      "email": "user.email",
+      "social": [
+        {
+          "facebook": "facebook"
+        }
+      ],
+      "info": "Everything starts in the mind. Hear how our minds are battling with an impossible task that then translates into physical disease. Understand what we can do to address the ‘monkey mind’.\n"
+    },
+    {
+      "name": "Michi Naomoto",
+      "gender": "Female",
+      "role": "Herbalist",
+      "title": "East Meets West",
+      "time": "15:00",
+      "email": "user.email",
+      "social": [
+        {
+          "facebook": "facebook"
+        }
+      ],
+      "info": "There is increasing belief that traditional Eastern medical approaches are much more suited to correcting our Western health pandemics. Gain insight on the solutions that time has forgotten and the corporate West has no motivation for. Discover how we can harness these therapies for ourselves.\n"
+    },
+    {
+      "name": "David Shadlock",
+      "gender": "Male",
+      "role": "Strength & Conditioning Coach",
+      "title": "Move That Booty",
+      "time": "16:00",
+      "email": "user.email",
+      "social": [
+        {
+          "facebook": "facebook"
+        }
+      ],
+      "info": "Our bodies where never built for sedentary lifestyles. The science behind moving. We can do everything needed in the day, whether or not we are a ‘gym bunny’  There is a fundamental mismatch between the creatures that we are and the lives we lead.  Although many of us think we know how to exercise, new science is telling us that we have got much  of it wrong, from the type of movement we are doing (or not!) to the language we use, to monitoring the fact that we are making progress.\n"
+    },
+    {
+      "name": "Leo Campbell",
+      "gender": "Male",
+      "role": "Life Science entrepreneur",
+      "title": "Slow And Fermented",
+      "time": "17:00",
+      "email": "user.email",
+      "social": [
+        {
+          "facebook": "facebook"
+        }
+      ],
+      "info": "Hear how a completely new business approach that combines modern science, ancient technology and the understanding of gut & digestion is making a material difference to public health by changing our eating habits for the better.\n"
+    },
+    {
+      "name": "TBC2",
+      "gender": "Male",
+      "role": "TBC",
+      "title": "Practice Hormone Love",
+      "time": "18:00",
+      "email": "user.email",
+      "social": [
+        {
+          "facebook": "facebook"
+        }
+      ],
+      "info": "When in proper working order our bodies function like well-oiled machines, relying on hormones playing a role in very biological process. Understand what this means for all of us, men and women equally, even when we are not part of the menopausal, pregnant or teenage populations!\n"
+    }
+  ]
+}

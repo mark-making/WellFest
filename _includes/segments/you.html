@@ -1,10 +1,17 @@
 <section class="pinch segment" id="you">
   <figure>
-    <img src="https://picsum.photos/400/600/" alt="Graphic of {{ speaker.name }}">
+    <picture>
+      {% include
+        /segments/image.html
+        segment="you"
+        format="jpg"
+        has-webp=true
+      %}
+    </picture>
   </figure>
   <div class="content">
     <h2>
-      Take a day<br><span>for</span>&#160;<span>you</span>
+      Take a day <em>for you</em>
     </h2>
     <p>Fast-paced, yet sedentary lifestyles are affecting our health.</p>
     <p>Take this day for you, to step back and ask questions. What does my lifestyle look like? Why?</p>

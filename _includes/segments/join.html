@@ -1,6 +1,14 @@
 <section class="pinch segment" id="join">
   <figure>
-    <img src="https://picsum.photos/g/1160/1160/" alt="Graphic of {{ speaker.name }}">
+    <picture>
+      {% include
+        /segments/image.html
+        segment="join"
+        format="jpg"
+        has-webp=true
+        alt="Closeup of open hands"
+      %}
+    </picture>
   </figure>  
   <div class="content">
     <h2>Join our community</h2>
@@ -8,7 +16,8 @@
     {% include
       /components/button.html
       link=site.mailchimp_link
-      cta="Sign up now"
+      cta="SIGN UP now"
+      class="pink-woo-woo"
     %}
     <p>Share your journey and support others @ChippyWellFest18 on Instagram and share your journey with #ChippyWellFest</p>
     <p>Keep up to date with plans for the day at facebook.com/chippywellfest</p>

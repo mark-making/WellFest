@@ -23,6 +23,9 @@ html {
     color: #000; /* 1 */
     text-shadow: none;
   }
+  address {
+    font-style: normal;
+  }
   // *:empty {
   //   &:not(path), &:not(br) {
   //     display: none;
@@ -40,12 +43,15 @@ iframe {
 ul.social-icons {
   display: flex;
   width: 11rem;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   list-style: none;
   padding: 0;
   margin: 0;
   li {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
     a {
       display: block;
     }
@@ -104,7 +110,7 @@ ul.social-icons {
 * {
   box-sizing: border-box;
   background-clip: padding-box;
-  &:not(#top):not(#main) {
+  &:not(#top):not(#main):not(#speakers) {
     &:target {
       outline: 4px solid DodgerBlue;
       outline-offset: -4px;
@@ -160,6 +166,16 @@ header {
       text-align: left;      
       display: inline-block;
       margin-left: -1rem;
+      svg {
+        height: 170px;
+        transition: all .5s .3ms ease;
+        transition-property: height; 
+      }
+      &.smaller {
+        svg {
+          height: 100px;
+        }
+      }
     }
     text-align: center;
     padding: 1rem;
@@ -177,12 +193,11 @@ header {
 [aria-label="content"] {
   position: relative;
   z-index: 1;
-  @import "./segment/intro",
-          "./segment/nine";
+  @import "./segment/intro";
   .pinch {
     width: inherit;
-    margin: 7rem auto;
     overflow: hidden;
+    margin: calc(5% + 1vmin) auto;
     @media (min-width: 768px) {
       &.introduction,
       &.feature {
@@ -202,8 +217,8 @@ header {
           position: relative;
           img {
             position: absolute;
-            object-position: 0 100%;
-            font-family: 'object-position: 0 100%;';
+            object-position: 0 50%;
+            font-family: 'object-position: 0 50%;';
           }
         }
       }
@@ -215,13 +230,14 @@ header {
         line-height: 1.1;
         word-break: break-word;
         display: inline-block;
+        text-shadow: 0px 2px 1px rgba(16, 16, 16, 0.05);
         em {
           display: inline-block;
           position: relative;
           font-style: normal;
         }
         @media (min-width: 320px) {
-          font-size: calc(2.75rem + 1vmin);
+          font-size: calc(2.45rem + 1vmin);
         }
         @media (min-width: 560px) {
           font-size: calc(3.2rem + 1vmin);
@@ -243,10 +259,10 @@ header {
       }      
       .content {
         align-self: stretch;
-        padding: calc(0.5rem + 1vmin);
       }
       @import "./segment/you",
               "./segment/together",
+              "./segment/find",
               "./segment/join",
               "./segment/help";
     }
@@ -261,4 +277,8 @@ header {
   display: inline-block;
   position: relative;
   color: currentColor;
+  &:focus {
+    outline-style: dashed;
+    outline-width: 2px;    
+  }
 }
