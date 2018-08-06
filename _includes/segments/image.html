@@ -1,3 +1,4 @@
+<!--[if IE 9]><video style="display: none;"><![endif]-->
 {%- if include.has-webp == true -%}
 <source type="image/webp"
         srcset="/img/{{include.segment}}-36.webp 244w,
@@ -10,4 +11,5 @@
                 /img/{{include.segment}}-72.{{include.format}} 488w,
                 /img/{{include.segment}}-96.{{include.format}} 650w,
                 /img/{{include.segment}}-150.{{include.format}} 1020w"/>
+<!--[if IE 9]></video><![endif]-->                
 <img src="/img/{{include.segment}}-150.{{include.format}}" alt="{{include.alt}}">

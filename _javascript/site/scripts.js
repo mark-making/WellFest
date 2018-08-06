@@ -9,17 +9,11 @@ fetch('./js/speaker-profiles.json')
 .then(function(data) {
   var startSlide = 1,
       imageSwiper = new Swiper('.image-slider', {
+        autoHeight: false,
         slidesPerView: 'auto',
         spaceBetween: 5,
         initialSlide: startSlide,
-        centeredSlides: false,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<li class="' + className + '">' + (data.speaker[index].time) + '</li>';
-          },
-        },  
+        centeredSlides: false, 
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
