@@ -33,15 +33,14 @@
           {% for speaker in site.data.speaker-profiles.speaker %}    
             <div class="swiper-slide speaker-details" id="{{ speaker.name | slugify }}">
               <strong>{{ speaker.name }}</strong> <b>– {{ speaker.role }}</b>
-              <h4>{{ speaker.title }}</h4>
               <p>{{ speaker.info -}}</p>
               {%- if speaker.social -%}
-                <ul class="social-icons">
+                <ul>
                   {%- for social in speaker.social -%}
                     {% for platform in social %}                                  
                     <li class="{{ platform[0] | downcase }}">
                       <a href="{% if platform[0] == 'facebook' %}http://fb.com/{{ platform[1] }}{% else %}http://ig.com/{{ platform[1] }}{% endif %}" target="new" rel="no-opener">
-                        <span {% if platform[0] %}class="sr-only"{% endif %}>{{ platform[1] }}</span>
+                        Find out about {{speaker.name | split: ' ' | first }} on {{ platform[0] | capitalize }}
                       </a>         
                     </li>
                     {% endfor %}

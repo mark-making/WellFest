@@ -24,6 +24,7 @@ let paths = {
   },
   scripts: {
     site: {
+      vendor: '_javascript/site/vendor/',
       src: '_javascript/site/**.js',
       dest: '_site/js/'
     },
@@ -61,6 +62,16 @@ function autoprefix() {
     .pipe(gulp.dest(paths.styles.dest));
 };
 
+function vendor_scripts() {
+  return gulp.src([
+                    paths.scripts.site.vendor + 'swiper.min.js',
+                    paths.scripts.site.vendor + 'ofi.min.js'
+                  ])
+    .pipe(plugins.concat('vendor.concat.js'))
+    .pipe(plugins.uglify())
+    .pipe(gulp.dest(paths.scripts.site.dest));
+}
+
 function site_scripts() {
   return gulp.src(paths.scripts.site.src)
     .pipe(plugins.concat('scripts.concat.js'))
@@ -92,13 +103,13 @@ function copy_json() {
 }
 
 function watch() {
-  gulp.watch(paths.scripts.site.src, site_scripts);
+  gulp.watch(paths.scripts.site.src, gulp.series(site_scripts, vendor_scripts));
   gulp.watch(paths.scripts.sw.src, service_worker);
   gulp.watch(paths.styles.src, gulp.series(styles, autoprefix));
   gulp.watch(paths.images.src, gulp.series(image_process, images_webp));
 };
 
-let build = gulp.parallel(gulp.series(styles, autoprefix), gulp.series(site_scripts, service_worker), gulp.series(image_process, images_webp), copy_json, watch);
+let build = gulp.parallel(gulp.series(styles, autoprefix), gulp.series(vendor_scripts, site_scripts, service_worker), gulp.series(image_process, images_webp), copy_json, watch);
 
 gulp.task(build);
 

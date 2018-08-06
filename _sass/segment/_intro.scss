@@ -4,10 +4,13 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 5rem auto 7rem auto;
+    margin: calc(2rem + 1vmin) auto;
+    @media (min-width: 768px) { 
+      margin: calc(8rem + 1vmin) auto;
+    }
     h1 {
       font: {
-        size: 5vmin;
+        size: calc(1.2rem + 1vmin);
         weight: 300;
       }
       line-height: 1.3;
@@ -19,13 +22,13 @@
         }
       }
       em {
-        display: inline-block;
         position: relative;
         font-style: normal;
         &:before, &:after {
           @extend %has-decoration;
         }
         @media (min-width: 768px) {
+          display: inline-block;
           // unique
           &:nth-of-type(1) {
             padding: 0 1.5rem;
@@ -97,6 +100,7 @@
               }          
             }        
           }
+          // health and wellbeing
           &:nth-of-type(3) {
             &:before {
               content: '';

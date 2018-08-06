@@ -45,10 +45,16 @@
   {%- endif %}
   <link rel="preload" href="/fonts/work-sans-v3-latin-300.woff2" as="font">
   <link rel="preload" href="/fonts/work-sans-v3-latin-300.woff" as="font">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+  <!--[if lte IE 8]>
   <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.4/fetch.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8.0.0/lib/index.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/picturefill@3.0.2/dist/picturefill.min.js"></script>
+  <![endif]-->
+  {% if jekyll.environment == 'production' %}
+  <script defer src="{{ "/js/vendor.concat.js" | absolute_url }}"></script>
+  {%- else -%}
+  <script src="{{ "/js/vendor.js" | absolute_url }}"></script>
+  {%- endif %}  
   <script type="application/ld+json">
   {
     "@context": "http://schema.org",
