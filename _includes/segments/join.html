@@ -11,24 +11,10 @@
     </picture>
   </figure>  
   <div class="content">
-    <h2>Join our community</h2>
-    <p>Hear all the latest news via your inbox</p>
-    {% include
-      /components/button.html
-      link=site.mailchimp_link
-      cta="SIGN UP now"
-      class="pink-woo-woo"
-    %}
-    <p>Share your journey and support others @ChippyWellFest18 on Instagram and share your journey with #ChippyWellFest</p>
-    <p>Keep up to date with plans for the day at facebook.com/chippywellfest</p>
-    <ul class="social-icons">
-      {% for social in site.data.social %}    
-      <li class="{{ social.name | downcase }}">
-        <a href="{{ social.url }}" target="new" rel="no-opener">
-          <span {% if social.icon %}class="sr-only"{% endif %}>{{ social.name }}</span>
-        </a>         
-      </li>
-      {% endfor %}
-    </ul> 
+    <h2>Join our <wbr>community</h2>
+    <p>ChippyWellFest is just the beginning.</p>
+    <p>We believe the support of like-minded people is the secret weapon to staying on-track with our health and wellbeing goals.</p>
+    <p>Join us on <a href="https://www.instagram.com/chippywellfest18/" target="new" rel="noopener external">Instagram</a> using <a href="https://www.instagram.com/explore/tags/chippywellfest/" target="new" rel="noopener external">#chippywellfest</a>, where you can find other members of our Community in your area and people with similar goals, plus the latest insider information from our experts.</p>
+    <p>Stay up-to-date with all things ChippyWellFest via <a href="https://www.facebook.com/ChippyWellFest/" target="new" rel="noopener external"><span>Facebook</span></a> or sign up to our <a href="https://thecancerjourneyman.us17.list-manage.com/subscribe?u=95733eb29b97b9fb20959e699&id=3ae0d81802" target="new" rel="noopener external">email newsletter.</a></p>
   </div>
 </section>

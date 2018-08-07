@@ -61,6 +61,9 @@
       }            
       @media (min-width: 992px) {
         > .split-paragraphs {
+          a[rel*="external"] {
+            color: $blue;
+          }
           column: {
             count: 2;
             gap: calc(1.5rem + 1vmin);

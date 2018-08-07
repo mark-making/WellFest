@@ -50,10 +50,8 @@ nav {
     }
     a {
       @media (min-width: 768px) {
-        @supports (writing-mode: vertical-lr) {
-          writing-mode: vertical-lr;
-        }
         writing-mode: bt-lr;
+        writing-mode: vertical-lr;
         &:first-of-type {
           transform: rotate(-180deg);
         }        

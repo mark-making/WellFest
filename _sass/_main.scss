@@ -17,20 +17,18 @@ html {
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    @media (max-width: 767px) {
+      line-height: 1.4;
+    }
   }
   ::selection {
-    background-color: $yellow; /* 1 */
-    color: #000; /* 1 */
+    background-color: $yellow;
+    color: #000;
     text-shadow: none;
   }
   address {
     font-style: normal;
   }
-  // *:empty {
-  //   &:not(path), &:not(br) {
-  //     display: none;
-  //   }
-  // }
 }
 
 main,
@@ -110,7 +108,11 @@ ul.social-icons {
 * {
   box-sizing: border-box;
   background-clip: padding-box;
-  &:not(#top):not(#main):not(#speakers) {
+  &:target {
+    outline: none;
+    box-shadow: none;
+  }
+  &:not(#top):not(#main):not(#speakers):not(#book) {
     &:target {
       outline: 4px solid DodgerBlue;
       outline-offset: -4px;
