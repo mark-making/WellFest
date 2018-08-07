@@ -4,11 +4,11 @@ footer {
   @media (min-width: 768px) {
     margin-bottom: 0;
   }
-  .big-book {
+  .big-book {  
     display: block;
     width: 100%;
     font: {
-      size: calc(2.35rem + 1vmin);
+      size: calc(1.35rem + 1vmin);
       weight: 300;
     }    
     color: $black;
@@ -17,44 +17,79 @@ footer {
       transform: uppercase;
       align: center;
     }
-    padding: 1rem;
-    background-color: $green;
+    padding: 1rem 1rem 2rem 1rem;
+    background-color: $white;
+    &:hover, &:focus {
+      outline: none;
+      strong {
+        box-shadow:
+          0 0 0 10px $white,
+          0 0 0 15px $blue;
+          @media (min-width: 768px) {
+            ~ span {
+              transform: translateX(2rem);
+            }
+          }
+      }
+    }     
     strong {
       display: inline-block;
       position: relative;
-      font-style: normal;
-      font-weight: 600;
-      &:after {
-        @extend %has-decoration;
-      }      
-      &:after {
-        content: '';
-        z-index: 0;        
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: auto;
-        height: 7px;          
-        background: {
-          image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="147" height="7"><path fill="#{$pink}" d="M145 0H5.8C4.2 0 3.7 1.5 4.1 2.7c-.7.1-1.4.2-2.1.2C.9 3 0 3.9 0 5c0 1 1 2.1 2.1 2 17.8-1.8 35.6-2.4 53.5-2.7 5.1-.1 84.4-.2 89.5-.2 2.6-.1 2.5-4.1-.1-4.1z"/></svg>');
-          repeat: no-repeat;
-          size: contain;
-          position-x: right;
-        }
-      }        
-    }      
-    @media (min-width: 768px) {
-      &:hover, &:focus {
-        strong {
-          color: $pink;
-          &:after {
-            background: {
-              image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="147" height="7"><path fill="#{$black}" d="M145 0H5.8C4.2 0 3.7 1.5 4.1 2.7c-.7.1-1.4.2-2.1.2C.9 3 0 3.9 0 5c0 1 1 2.1 2.1 2 17.8-1.8 35.6-2.4 53.5-2.7 5.1-.1 84.4-.2 89.5-.2 2.6-.1 2.5-4.1-.1-4.1z"/></svg>');
-            }
-          }
+      transition: box-shadow 300ms ease;
+      box-shadow: none;
+      ~ span {
+        display: block;
+        transform: translateY(1rem);
+      }
+      @media (min-width: 768px) {
+        ~ span {
+          transition: transform 300ms ease;
+          display: inline-block;
+          transform: translateX(1rem);
         }
       }
-    }
+      font: {
+        style: normal;
+        weight: 600;
+        size: calc(2.35rem + 1vmin);
+      }
+      background-color: $yellow;
+      padding: 0.6rem 1rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      text-indent: -0.2rem;   
+      // &:after {
+      //   @extend %has-decoration;
+      // }      
+      // &:after {
+      //   content: '';
+      //   z-index: 0;        
+      //   left: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   width: auto;
+      //   height: 7px;          
+      //   background: {
+      //     image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="147" height="7"><path fill="#{$pink}" d="M145 0H5.8C4.2 0 3.7 1.5 4.1 2.7c-.7.1-1.4.2-2.1.2C.9 3 0 3.9 0 5c0 1 1 2.1 2.1 2 17.8-1.8 35.6-2.4 53.5-2.7 5.1-.1 84.4-.2 89.5-.2 2.6-.1 2.5-4.1-.1-4.1z"/></svg>');
+      //     repeat: no-repeat;
+      //     size: contain;
+      //     position-x: right;
+      //   }
+      // }        
+    }      
+    // @media (min-width: 768px) {
+    //   &:hover, &:focus {
+    //     strong {
+    //       box-shadow: 0 0 0 10px white, 0 0 0 15px $blue;
+    //       // color: $pink;
+    //       // &:after {
+    //       //   background: {
+    //       //     image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="147" height="7"><path fill="#{$black}" d="M145 0H5.8C4.2 0 3.7 1.5 4.1 2.7c-.7.1-1.4.2-2.1.2C.9 3 0 3.9 0 5c0 1 1 2.1 2.1 2 17.8-1.8 35.6-2.4 53.5-2.7 5.1-.1 84.4-.2 89.5-.2 2.6-.1 2.5-4.1-.1-4.1z"/></svg>');
+    //       //   }
+    //       // }
+    //     }
+    //   }
+    // }
   }
   .sponsors {
     width: 100%;
@@ -228,3 +263,26 @@ footer {
     }
   }
 }
+
+#book {
+  &:target {
+    a {
+      strong {
+        transition: box-shadow 300ms ease;
+        box-shadow: 0 0 0 10px $white, 0 0 0 15px $blue;
+        ~ span {
+          @media (min-width: 768px) {
+            transform: translateX(2rem);
+          }
+        }          
+      }
+      @media (min-width: 768px) {
+        &:hover, &:focus {
+          strong {
+            box-shadow: 0 0 0 10px $white, 0 0 0 15px $yellow;
+          }
+        }
+      }
+    }
+  }
+}  

@@ -39,8 +39,8 @@
                   {%- for social in speaker.social -%}
                     {% for platform in social %}                                  
                     <li class="{{ platform[0] | downcase }}">
-                      <a href="{% if platform[0] == 'facebook' %}http://fb.com/{{ platform[1] }}{% else %}http://ig.com/{{ platform[1] }}{% endif %}" target="new" rel="no-opener">
-                        Find out about {{speaker.name | split: ' ' | first }} on {{ platform[0] | capitalize }}
+                      <a href="{% if platform[0] == 'facebook' %}http://facebook.com/{{ platform[1] }}{% else %}http://instagram.com/{{ platform[1] }}{% endif %}" target="new" rel="external noopener">
+                        Find out about <b>{{speaker.name | split: ' ' | first }}</b> on <span>{{ platform[0] | capitalize }}</span>
                       </a>         
                     </li>
                     {% endfor %}

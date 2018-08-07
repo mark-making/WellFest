@@ -1,11 +1,11 @@
 {
-  "name": "The mm* Journal",
-  "short_name": "mmj",
-  "description": "Our gift to you",
+  "name": "ChippyWellFest",
+  "short_name": "CWF",
+  "description": "ChippyWellFest is a unique day of talks to open minds and challenge understanding around lifestyle, health and wellbeing.",
   "start_url": "./",
   "display": "standalone",
   "orientation": "any",
-  "theme_color": "#cf0a2c",
+  "theme_color": "#FFED00",
   "icons": [
     {
       "src": "/img/homescreen-192x192.png",

@@ -3,7 +3,7 @@
   <ul>
     {% for sponsor in site.data.sponsors %}    
     <li class="{{ sponsor.name | slugify | downcase }}">
-      <a href="{{ sponsor.url }}" target="new" rel="no-opener"><span class="sr-only">{{ sponsor.name }}</span></a>
+      <a href="{{ sponsor.url }}" target="new" rel="noopener external"><span class="sr-only">{{ sponsor.name }}</span></a>
     </li>
     {% endfor %}
   </ul>
