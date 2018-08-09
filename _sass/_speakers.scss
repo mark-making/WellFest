@@ -184,6 +184,7 @@
     flex-direction: column;
     margin-bottom: .5rem;
     li {
+      color: $blue;
       list-style-type: disc;
       list-style-position: inside;
       + li {
@@ -196,31 +197,9 @@
     border-radius: .2rem;
     vertical-align: bottom;
     color: $black;
-    text-decoration: none;
-    b {
-      vertical-align: inherit;
-    }
+    text-decoration: underline;
     &:hover, &:focus {
-      span {
-        text-decoration: underline;
-      }
-    }
-    span {
-      display: inline-block;
-      border-radius: 5px;
-      padding: 0.05rem 0.4rem;
-    }
-    &[href*="facebook"] {
-      span {
-        background-color: $facebook;
-        color: $white;
-      }
-    }
-    &[href*="instagram"] {
-      span {
-        background: radial-gradient(circle at 33% 100%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
-        color: $white;
-      }
+      text-decoration: underline;
     }
   }  
   h4 {

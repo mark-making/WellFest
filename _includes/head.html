@@ -46,15 +46,13 @@
   <link rel="preload" href="/fonts/work-sans-v3-latin-300.woff2" as="font">
   <link rel="preload" href="/fonts/work-sans-v3-latin-300.woff" as="font">
   <script>
-  if (!!window.HTMLPictureElement) {
-    console.warn('<picture> supported')
-  } else {
-    console.warn('<picture> not supported')
+  if (!window.HTMLPictureElement) {
     var js = document.createElement('script');
     js.src = "/js/vendor.polyfills.js";
-    document.head.appendChild(js);    
+    document.head.appendChild(js);
   }
   </script>
+  <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver&rum=0"></script>
   {%- if jekyll.environment == 'production' %}
   <script src="{{ "/js/vendor.concat.js" | absolute_url }}"></script>
   {%- else %}

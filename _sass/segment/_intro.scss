@@ -6,7 +6,7 @@
     flex-direction: column;
     margin: calc(2rem + 1vmin) auto;
     @media (min-width: 768px) { 
-      margin: calc(8rem + 1vmin) auto;
+      margin: calc(3rem + 1vmin) auto calc(8rem + 1vmin) auto;
     }
     h1 {
       font: {
