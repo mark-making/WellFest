@@ -1,4 +1,4 @@
-var startSlide = 1,
+var startSlide = 0,
     imageSwiper = new Swiper('.image-slider', {
       autoHeight: false,
       slidesPerView: 'auto',
@@ -37,8 +37,7 @@ imageSwiper.controller.control = speakerInfo;
 
 // initialize the scrollama
 
-var step = document.getElementById('main'),
-    graphic = document.getElementById('site-logo'),
+var graphic = document.getElementById('site-logo'),
     scroller = scrollama();
 
 // scrollama event handlers
@@ -62,8 +61,8 @@ function init() {
   // this will also initialize trigger observations
   // 3. bind scrollama event handlers (this can be chained like below)
   scroller.setup({
-    offset: .1,
-    step: '#main',
+    offset: .15,
+    step: '.scroll-trigger',
     graphic: '#site-logo', // required (for sticky),
     debug: false,
   })

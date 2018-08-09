@@ -5,6 +5,23 @@
       @extend %has-decoration;
     }
   }
+  .inline-space-saver {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    list-style-position: inside;
+    li {
+      flex: 1 0 auto;
+      width: 50%;
+      color: $blue;
+      margin-top: .5rem;
+      p {
+        display: inline-block;
+        color: $black;
+      }
+    }    
+  }
   @media (min-width: 768px) {
     h2 {
       grid-column: {
@@ -49,7 +66,7 @@
         }
       }
     }
-    .content {           
+    .content {
       @media (min-width: 768px) {
         grid-column: {
           start: 2;
@@ -66,7 +83,7 @@
           }
           column: {
             count: 2;
-            gap: calc(1.5rem + 1vmin);
+            gap: calc(5rem + 1vmax);
           }
         }
       }

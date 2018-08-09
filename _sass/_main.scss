@@ -200,6 +200,9 @@ header {
     width: inherit;
     overflow: hidden;
     margin: calc(5% + 1vmin) auto;
+    &:last-of-type {
+      margin-bottom: calc(1rem + 1vmin);
+    }
     @media (min-width: 768px) {
       &.introduction,
       &.feature {
@@ -261,12 +264,13 @@ header {
       }      
       .content {
         align-self: stretch;
+        width: 100%;
       }
       @import "./segment/you",
               "./segment/together",
               "./segment/find",
               "./segment/join",
-              "./segment/help";
+              "./segment/donate";
     }
   }
 }

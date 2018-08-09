@@ -262,6 +262,110 @@ footer {
       }      
     }
   }
+  .data {
+    > div {
+      margin: auto;
+      max-width: 70vw;      
+      details {
+        padding-bottom: 2rem;
+        hr {
+          margin: 0 0 1rem;
+          opacity: .5;
+          border: none;
+          border-bottom: solid 1px $black;
+          background-color: transparent;          
+        }       
+        summary {
+          padding: 1rem 0;
+          z-index: 100;
+          position: relative;
+          display: block;
+          list-style-type: none;
+          padding-left: 1.5rem;
+          opacity: 1;
+          cursor: pointer;
+          &::-webkit-details-marker {
+            display: none;
+            visibility: hidden;
+          }
+          &:focus {
+            outline: none;
+          }         
+          &:before {
+            content: '\002B'!important;
+            transform: rotate(-45deg);
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+            line-height: 1;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            display: inline-block;
+            will-change: transform;
+            transition: transform 200ms ease;
+            transform-origin: center center;
+          }
+          &:hover, &:focus {
+            &:before {
+              transform: rotate(-45deg) scale(1.5);
+              color: red;
+            }
+          }
+          ~ * {
+            display: block;
+          }          
+        }
+        &:not([open]){
+          padding-bottom: 0;
+          summary {
+            opacity: .7;
+            &:hover, &:focus {
+              opacity: 1;
+            }            
+            &:before {
+              content: '\002B';
+              color: $pink;
+              transform: rotate(0);
+            }
+            ~ * {
+              display: none;
+            }                                     
+          }
+        }
+      }
+      table {
+        font-size: .8rem;
+        background-color: #fff;
+        width: 100%;
+        border-collapse: collapse;
+        @media (min-width: 768px) {
+          table-layout: fixed;
+        }
+        thead {
+          background-color: $blue;
+          color: $white;
+          font-size: 1rem;
+          border-bottom: solid 3px darken($blue, 10%);
+          th {
+            padding: 1rem;
+          }
+        }
+        tbody {
+          tr {
+            td {
+              padding: .5rem 1rem;
+            }
+            &:nth-child(odd) {
+              td {
+                background-color: darken($white, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 #book {

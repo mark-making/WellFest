@@ -1,6 +1,6 @@
 main: 
   - name: "Book"
-  - name: "Speakers"
+  - name: "Donate"
 
 secondary:
   - name: "You"
