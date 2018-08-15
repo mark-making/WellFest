@@ -19,6 +19,9 @@
     @extend %desktop-only-grid-6-col; 
     z-index: 1;
     margin: $content-box-padding;
+    a {
+      color: $yellow;
+    }
     @supports (display: grid) {
       * {
         grid-column: 1 / span 6;
@@ -43,10 +46,7 @@
       flex: 2 0 0%;
       align-self: center;
       display: flex;
-      flex-direction: column;
-            a {
-              color: $yellow;
-            }      
+      flex-direction: column;     
       @media (min-width: 992px) {
         > .split-paragraphs {
           display: grid;

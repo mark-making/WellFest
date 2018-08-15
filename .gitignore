@@ -6,6 +6,10 @@ _site/
 .sass-cache/
 .jekyll-metadata
 
+### local SSL ###
+
+*.pem
+
 ### macOS ###
 *.DS_Store
 .AppleDouble

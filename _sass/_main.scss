@@ -220,10 +220,16 @@ header {
           height: 85vmin;
           overflow: hidden;
           position: relative;
-          img {
-            position: absolute;
-            object-position: 0 50%;
-            font-family: 'object-position: 0 50%;';
+          picture {
+            display: block;
+            height: 100%;
+            position: relative;
+            overflow: auto;
+            img {
+              position: absolute;
+              object-position: 0 100%;
+              font-family: 'object-position: 0 50%;';
+            }            
           }
         }
       }

@@ -93,7 +93,7 @@ function service_worker() {
 
 function images_webp() {
   return gulp.src(paths.images.webp)
-    .pipe(plugins.webp({ preset: 'photo' }))  
+    .pipe(plugins.webp({ preset: 'default' }))  
     .pipe(gulp.dest(paths.images.dest));
 }
 
