@@ -1,15 +1,17 @@
 <!--[if IE 9]><video style="display: none;"><![endif]-->
 {%- if include.has-webp == true -%}
 <source type="image/webp"
-        srcset="/img/{{include.segment}}-36.webp 244w,
-                /img/{{include.segment}}-72.webp 488w,
-                /img/{{include.segment}}-96.webp 650w,
-                /img/{{include.segment}}-150.webp 1020w"/>
+        srcset="/img/{{include.segment}}-36.webp 380w,
+                /img/{{include.segment}}-72.webp 765w,
+                /img/{{include.segment}}-96.webp 1020w,
+                /img/{{include.segment}}-150.webp 1160w,
+                /img/{{include.segment}}-300.webp 2048w"/>
 {%- endif -%}
 <source type="image/{{include.format}}"
-        srcset="/img/{{include.segment}}-36.{{include.format}} 244w,
-                /img/{{include.segment}}-72.{{include.format}} 488w,
-                /img/{{include.segment}}-96.{{include.format}} 650w,
-                /img/{{include.segment}}-150.{{include.format}} 1020w"/>
+        srcset="/img/{{include.segment}}-36.{{include.format}} 380w,
+                /img/{{include.segment}}-72.{{include.format}} 765w,
+                /img/{{include.segment}}-96.{{include.format}} 1020w,
+                /img/{{include.segment}}-150.{{include.format}} 1160w,
+                /img/{{include.segment}}-300.{{include.format}} 2048w"/>
 <!--[if IE 9]></video><![endif]-->
 <img src="/img/{{include.segment}}-150.{{include.format}}" width="650" alt="{{include.alt}}">

@@ -40,8 +40,8 @@ ID = "Your_Site_ID"
 
 # A basic redirects rule
 [[redirects]]
-  from = "/*"
-  to = "/blog/:splat"
+  from = "//wellfest.netlify.com/*"
+  to = "//chippywellfest.co.uk/:splat 301!"
 
 [[headers]]
   for = "/*" # This defines which paths this specific [[headers]] block will cover.
@@ -49,8 +49,3 @@ ID = "Your_Site_ID"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     Content-Security-Policy = "frame-ancestors https://www.facebook.com"
-    # Multi-key header rules are expressed with multi-line strings
-    Link = '''
-    </assets/css/base.css>; rel=preload; as=style, \
-    </assets/css/base2.css>; rel=preload; as=style, \
-    </assets/css/base3.css>; rel=preload; as=style'''

@@ -14,6 +14,7 @@
   <meta name="msapplication-starturl" content="/">
   <meta name="keywords" content="Health and wellness website, Alternative and holistic health service" />
   <meta name="description" content="{{ site.description }}" />
+  <meta name="google-site-verification" content="EsOReLlJ2qv5ufjjqqMtDU8EnDPiURCLw5nZNLDQNWA" />
   {%- comment %} OpenGraph {% endcomment %}  
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_gb" />
@@ -51,11 +52,7 @@
   }
   </script>
   <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver&rum=0"></script>
-  {%- if jekyll.environment == 'production' %}
   <script src="{{ "/js/vendor.concat.js" | absolute_url }}"></script>
-  {%- else %}
-  <script src="{{ "/js/vendor.js" | absolute_url }}"></script>
-  {%- endif %}  
   <script type="application/ld+json">
   {
   "@context": "http://schema.org",

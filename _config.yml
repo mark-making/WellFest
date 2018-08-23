@@ -10,12 +10,13 @@ description: >-
 strapline: >-
   Prepare to feel empowered to make positive changes, that will have a real and lasting impact on your life.
 twitter_username: ChippyWellFest
-company_website: "http://www.chippywellfest.co.uk"
+company_website: "https://www.chippywellfest.co.uk"
 booking_link: "https://chippywellfest18.eventbrite.co.uk"
 mailchimp_link: "https://thecancerjourneyman.us17.list-manage.com/subscribe?u=95733eb29b97b9fb20959e699&id=3ae0d81802"
-donate_link: "https://paypal.com"
+donate_link: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CED32435A4ENG"
 event_date: "Saturday 29th September"
-url: ""
+url: "https://www.chippywellfest.co.uk"
+# url: "https://wellfest.netlify.com"
 strict_front_matter: true
 #
 # ┌────────────────┐
@@ -26,19 +27,5 @@ port: 1515
 incremental: true
 markdown: kramdown
 keep_files: [ css, js, img, fonts, service-worker.js, service-worker.js, humans.txt, robots.txt ]
-exclude:
-  - Gulpfile.js
-  - admin
-  - readme.md
-  - package.json
-  - Gemfile
-  - Gemfile.lock
-  - yarn.lock
-  - yarn-error.log
-  - netlify.toml
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - run_control
+include: [ _headers, _redirects ]
+exclude: [ Gulpfile.js, admin, readme.md, package.json, Gemfile, Gemfile.lock, yarn.lock, yarn-error.log, netlify.toml, node_modules, vendor/**/*, run_control, "*.pem" ]
