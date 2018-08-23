@@ -1,1 +1,1 @@
-<p><a href="{{ include.link }}" class="button {{ include.class }}">{{ include.cta }}</a></p>
+<p><a href="{{ include.link }}" class="button {{ include.class }}" {% if include.target %}target="{{ include.target }}"{% endif %} {% if include.rel %}rel="{{ include.rel }}"{% endif %}>{{ include.cta }}</a></p>

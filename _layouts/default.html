@@ -11,10 +11,6 @@
     {{ content }}
     </main>
     {% include footer.html %}
-    {% if jekyll.environment == 'production' %}
-    <script src="{{ "/js/scripts.concat.js" | absolute_url }}"></script>
-    {%- else -%}
-    <script src="{{ "/js/scripts.js" | absolute_url }}"></script>
-    {%- endif %}    
+    <script src="{{ "/js/scripts.concat.js" | absolute_url }}"></script>  
   </body>
 </html>

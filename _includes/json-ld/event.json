@@ -37,6 +37,10 @@
     "priceCurrency": "GBP"
   },
   "organizer": { "@id": "{{ site.url | absolute_url }}#nick-parker" },
+  "performer": {
+    "@type": "PerformingGroup",
+    "name": "Multiple guest speakers"
+  },
   "sponsor": [
   {%- for sponsor in site.data.sponsors %}
     {
