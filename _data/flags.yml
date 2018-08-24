@@ -1,7 +1,5 @@
 # Flags
 
-# true/false
-
-gated: true
+# Schema references.
 availability: "InStock" # SoldOut
 status: "EventScheduled" # EventCancelled | EventPostponed | EventRescheduled | EventScheduled

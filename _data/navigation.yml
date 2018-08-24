@@ -2,6 +2,7 @@ main:
   - name: "Book"
   - name: "Donate"
 
+# No longer used
 secondary:
   - name: "You"
   - name: "Together"
