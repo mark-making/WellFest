@@ -7,8 +7,8 @@
     "netlify"
   ],
   "scripts": {
-    "serve_dev_env-production": "JEKYLL_ENV=production bundle exec jekyll s --livereload ; gulp",
-    "serve_dev_env-development": "JEKYLL_ENV=development bundle exec jekyll s --livereload ; gulp",
+    "serve_dev_env-production": "JEKYLL_ENV=production bundle exec jekyll s --livereload & gulp",
+    "serve_dev_env-development": "JEKYLL_ENV=development bundle exec jekyll s --livereload & gulp",
     "build": "bundle exec jekyll b ; gulp"
   },  
   "repository": "git@github.com:mark-making/WellFest.git",
