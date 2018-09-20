@@ -34,9 +34,13 @@
             <div class="swiper-slide speaker-details" id="{{ speaker.name | slugify }}">
               <strong title="{{speaker.name | split: ' ' | first | append: '&apos;s' }} talk – '{{ speaker.title }}'">{{ speaker.name }}</strong>{%- if speaker.role -%}&nbsp;<b>– {{ speaker.role }}</b>{%- endif -%}
               <p>{{ speaker.info -}}</p>
-              {%- if speaker.social -%}
                 <ul>
-                  {%- for social in speaker.social -%}
+                  <li>
+                    <a href="https://medium.com/chippywellfest/tagged/cwfspeaker" target="new" rel="external noopener">
+                      Find out about {%- if speaker.alias %} {{speaker.alias}} {% else %} {{speaker.name | split: ' ' | first }} {% endif -%} on <span>Medium</span>
+                    </a>         
+                  </li>                  
+                  <!-- {%- for social in speaker.social -%}
                     {% for platform in social %}                                  
                     <li class="{{ platform[0] | downcase }}">
                       <a href="{% if platform[0] == 'facebook' %}https://en-gb.facebook.com/{{ platform[1] }}{% elsif platform[0] == 'instagram' %}https://www.instagram.com/{{ platform[1] }}/?hl=en{% else %}https://www.twitter.com/{{ platform[1] }}{% endif %}" target="new" rel="external noopener">
@@ -44,9 +48,10 @@
                       </a>         
                     </li>
                     {% endfor %}
-                  {% endfor %}
+                  {% endfor %} -->
                 </ul>
-              {%- endif -%}
+              <!-- {%- if speaker.social -%} 
+              {%- endif -%} -->
             </div>
           {% endfor %}
       </div>
