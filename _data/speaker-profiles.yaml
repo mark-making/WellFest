@@ -72,8 +72,8 @@ speaker:
   social:
   - facebook: wyldhealth
   - instagram: wyldhealth
-# - name: "Michael McIntyre"
-#   gender: Male
-#   role: Health Sage
-#   title: Reality of ageing
-#   info: It’s so important that people consider the reality of the ageing process - because it’s happening to all of us! We need to learn to face the realities of ageing and how best to deal with it.  
+- name: "Michael McIntyre"
+  gender: Male
+  role: Health Sage
+  title: Reality of ageing
+  info: It’s so important that people consider the reality of the ageing process - because it’s happening to all of us! We need to learn to face the realities of ageing and how best to deal with it.  
