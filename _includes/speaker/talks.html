@@ -1,0 +1,26 @@
+<section>
+  {{ content }}
+  {% for speaker in site.data.speaker-profiles.speaker %}
+  <div class="{{speaker.color}}" id="{{ speaker.name | slugify }}">
+    <div class="content">
+      <div>
+        <h2 class="{{speaker.color}}">{{ speaker.title | upcase }}</h2>
+        <h3 title="{{speaker.name | split: ' ' | first | append: '&apos;s' }} talk – '{{ speaker.title }}'">{{ speaker.name }}</h3>
+        <p>{{ speaker.info | truncatewords: 20 -}}</p>
+        <ul class="inline-space-saver">
+          <li>
+            <a href="https://medium.com/chippywellfest/tagged/cwfspeaker" target="new" rel="external noopener">
+              Download slides
+            </a>         
+          </li>                  
+        </ul>        
+      </div>
+    </div>
+    <div class="{{speaker.color}} embed aspect-ratio">
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/{{speaker.embed}}?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+

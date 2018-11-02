@@ -39,7 +39,14 @@
                     <a href="https://medium.com/chippywellfest/tagged/cwfspeaker" target="new" rel="external noopener">
                       Find out about {%- if speaker.alias %} {{speaker.alias}} {% else %} {{speaker.name | split: ' ' | first }} {% endif -%} on <span>Medium</span>
                     </a>         
-                  </li>                  
+                  </li>
+                  
+                  <li>
+                    <a href="/talks/#{{ speaker.name | slugify }}">
+                      Watch {%- if speaker.alias %} {{speaker.alias}} {% else %} {{speaker.name | split: ' ' | first }} {% endif -%} at ChippyWellFest day
+                    </a>         
+                  </li>
+                 
                   <!-- {%- for social in speaker.social -%}
                     {% for platform in social %}                                  
                     <li class="{{ platform[0] | downcase }}">

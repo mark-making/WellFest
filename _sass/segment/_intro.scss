@@ -122,5 +122,36 @@
         }        
       }
     }
+    .embed {
+      margin: 1.5rem 0;
+      @media (min-width: 768px) { 
+        margin: 5rem 0 0 0;
+        &:before {
+          content: '';
+          display: block;
+          top: -1.5rem;
+          bottom: -2rem;
+          left: -2rem;
+          right: -2rem;
+          background: {
+            image: svg-url('<svg xmlns="http://www.w3.org/2000/svg" width="1083" height="623" version="1"><path fill="#{$yellow}" d="M1083 613c-9-90-12-179-14-269l-1-324h5c11 0 10-19-1-20H31l-3 6c-6-2-13 0-13 8l-1 330c-2 90-5 179-14 269-1 5 5 10 10 10h2c89-9 164-12 254-14l796-1 1 5c0 6 4 10 10 10 5 0 11-5 10-10zm-981-25H35v-66V21l1013-1v568H102z"/></svg>');
+            repeat: no-repeat;
+            size: 100%;
+            position: center;
+          }
+          z-index: 1;
+          pointer-events: none;       
+        }
+        iframe {
+          box-shadow: 0px 0px 0 0.8rem $yellow;
+        }        
+      }
+      &:before {
+        @extend %has-decoration;      
+      }      
+      iframe {
+        padding: 0;
+      }
+    }
   }
 }
