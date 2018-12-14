@@ -166,11 +166,17 @@ header {
       position: sticky;
     }    
   }
+  @supports (pointer-events: none) {
+   pointer-events: none; 
+  }
   position: relative;
   top: -1px;
   z-index: 5;
   .logo {
     background-color: rgba($white, .65); 
+    @supports (pointer-events: none) {
+      pointer-events: auto;
+    }    
     @media (min-width: 768px) {
       text-align: left;      
       display: inline-block;

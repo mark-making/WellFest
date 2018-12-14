@@ -19,7 +19,7 @@ donate_link: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_
 event_date: "Saturday 29th September"
 # url: "https://www.chippywellfest.co.uk"
 # url: "https://wellfest.netlify.com"
-url: "https://wellfest-staging.netlify.com"
+# url: "https://wellfest-staging.netlify.com"
 strict_front_matter: true
 #
 # ┌────────────────┐
