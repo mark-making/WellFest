@@ -161,6 +161,7 @@ header, [aria-label="content"], footer {
 
 header {
   @media (min-width: 768px) {
+    pointer-events: none;
     @supports (position: sticky) {
       position: sticky;
     }    
@@ -188,6 +189,7 @@ header {
     text-align: center;
     padding: 1rem;
     a[href] {
+      pointer-events: all;
       overflow: hidden;
       line-height: 0;
       vertical-align: middle;
@@ -245,7 +247,7 @@ header {
         text-transform: uppercase;
         font-weight: 600;   
         line-height: 1.1;
-        word-break: break-word;
+        word-break: keep-all;
         display: inline-block;
         text-shadow: -1px 5px 5px rgba(16, 16, 16, 0.05);
         em {

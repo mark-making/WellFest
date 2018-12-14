@@ -18,7 +18,7 @@
       @media (min-width: 768px) {  
       letter-spacing: -0.05rem;
         font: {
-          size: calc(2.8rem + 1vmin);
+          size: calc(2.1rem + 1vmin);
         }
       }
       em {
@@ -51,7 +51,7 @@
               will-change: transform;
               z-index: 1;
               width: 100%;
-              height: 58px;
+              height: 45px;
               background: {
                 image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMiIgaGVpZ2h0PSI1OCI+PHBhdGggZmlsbD0iI2ZmN2RmZiIgZD0iTTE3IDQyYTQ2IDQ2IDAgMCAwLTE0IDljLTQgNCAxIDkgNSA2YTM2IDM2IDAgMCAxIDExLThjMSAwIDMtMiAyLTQgMC0yLTItNC00LTN6TTE3IDIyTDQgMjNjLTUgMS01IDggMCA4bDEzLTFjNS0xIDUtOCAwLTh6TTIwIDhhMjkgMjkgMCAwIDAtMTAtOEM4IDAgNiAwIDUgMiA0IDMgNSA2IDYgN2EyNCAyNCAwIDAgMSA5IDYgNCA0IDAgMCAwIDUgMCA0IDQgMCAwIDAgMC01eiIvPjwvc3ZnPg==');
                 repeat: no-repeat;
@@ -60,11 +60,11 @@
             }
             &:before {
               left: 0;
-              transform: translate(0,.6rem);
+              transform: translate(0.3rem, 0.7rem);
             }
             &:after {
               right: 0;
-              transform: translate(0, 0.6rem) rotateY(180deg);
+              transform: translate(-0.2rem, 0.7rem) rotateY(180deg);
             }        
           }
           // challenge
@@ -81,9 +81,9 @@
               left: 0;
               right: 0;
               bottom: 0;
-              transform: translate(-1rem, 0.2rem) perspective(0);
+              transform: translate(-0.9rem, 0.4rem) perspective(0);
               width: auto;
-              height: 16px;
+              height: 15px;
               clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
               animation: {
                 name: draw-challenge;

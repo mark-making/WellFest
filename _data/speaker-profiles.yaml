@@ -2,7 +2,7 @@
 speaker:
 - name: "Nick Parker"
   color: "yellow"
-  embed: "0EQOZRIA-nA"
+  embed: "s7c7YecsiaU"
   gender: Male
   role: The Cancer JourneyMan
   title: End the death sentence
@@ -12,7 +12,7 @@ speaker:
     instagram: thecancerjourneyman
 - name: "Juliet Norman"
   color: "pink"
-  embed: "0EQOZRIA-nA"
+  embed: "s7c7YecsiaU"
   gender: Female
   role: Nutritional Therapist
   title: One Diet Bunkum
@@ -21,14 +21,14 @@ speaker:
   - instagram: JulietNormanNutrition
 - name: "Nikki Jackson"
   color: "blue"
-  embed: "0EQOZRIA-nA"
+  embed: "s7c7YecsiaU"
   gender: Female
   role: Mindfulness Teacher
   title: To be or not to be?
   info: Everything starts in the mind. Hear how our minds are battling with an impossible task that translates into physical disease and understand what we can do to address the 'monkey mind'.
 - name: "Jess Goyder"
   color: "green"
-  embed: "0EQOZRIA-nA"
+  embed: "fPj2Wur8P-M"
   role: Chronic Fatigue Thriver
   gender: Female
   title: Wisdom from me
@@ -37,35 +37,35 @@ speaker:
   - instagram: jessgoyder
 - name: "Michi Naomoto"
   color: "yellow"
-  embed: "0EQOZRIA-nA"
+  embed: "s7c7YecsiaU"
   gender: Female
   role: Acupuncturist & Herbalist
   title: Hidden Heat
   info: There is an increasing belief that traditional Eastern medical approaches are more suited to correcting our Western health pandemics. Gain insight into the solutions time has forgotten and discover how we can harness these therapies for ourselves.
 - name: "Louise Blyth"
   color: "pink"
-  embed: "0EQOZRIA-nA"
+  embed: "s7c7YecsiaU"
   gender: Female
   role: Spiritual Motivator
   title: He heard my cry
   info: Is it possible to lose the love of your life but gain the greatest love you can ever know? Can life be found in death? Hear a personal story about how grief can lead to spiritual hope.
 - name: "David Shadlock"
   color: "green"
-  embed: "0EQOZRIA-nA"
+  embed: "natMz5EOyJc"
   gender: Male
   role: Personal Trainer
   title: Move That Booty
   info: Our bodies were never built for sedentary lifestyles. Many of us think we know how to exercise, but new science is telling us we have much of it wrong.    Learn the science behind moving and how we can do everything needed in the day, whether a 'gym bunny' or not.
 - name: "Helen Marsden"
   color: "yellow"
-  embed: "0EQOZRIA-nA"
+  embed: "pTy0qUu6PHQ"
   gender: Female
   role: Home Health Screening Guru
   title: Measuring your health
   info: There’s lots you can learn about your wellbeing from a simple blood test; not only to find out why you might feel any symptoms you do but also to make sure you’re being the best you can.
 - name: "Leo Campbell & Melissa Sharp"
   color: "blue"
-  embed: "0EQOZRIA-nA"
+  embed: "s7c7YecsiaU"
   alias: "Modern Baker"
   gender: Male
   role: Founders of Modern Baker
@@ -77,7 +77,7 @@ speaker:
   info: "Slow, fermented and local. Hear how a slow-carb philosophy, backed by the science of good gut health, is challenging not only our notions of bread & baked goods but a modern industry that is acting only to feed itself."
 - name: "Karina Athwal"
   color: "pink"
-  embed: "0EQOZRIA-nA"
+  embed: "s7c7YecsiaU"
   gender: Female
   role: Clinical Psychoneuroimmunologist
   title: Love your hormones
@@ -86,7 +86,7 @@ speaker:
   - twitter: UMNutrition
 - name: "Clare Wyld"
   color: "green"
-  embed: "0EQOZRIA-nA"
+  embed: "RuLuOOpr6yU"
   gender: Female
   role: NHS Doctor & Nutritionist
   title: Our future NHS
@@ -96,7 +96,7 @@ speaker:
   - instagram: wyldhealth
 - name: "Michael McIntyre"
   color: "blue"
-  embed: "0EQOZRIA-nA"
+  embed: "s7c7YecsiaU"
   gender: Male
   role: Health Sage
   title: Reality of ageing
