@@ -17,7 +17,7 @@ booking_link: "https://chippywellfest18.eventbrite.co.uk"
 mailchimp_link: "https://thecancerjourneyman.us17.list-manage.com/subscribe?u=95733eb29b97b9fb20959e699&id=3ae0d81802"
 donate_link: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CED32435A4ENG"
 event_date: "Saturday 29th September"
-# url: "https://www.chippywellfest.co.uk"
+url: "https://www.chippywellfest.co.uk"
 # url: "https://wellfest.netlify.com"
 # url: "https://wellfest-staging.netlify.com"
 strict_front_matter: true
@@ -29,6 +29,6 @@ strict_front_matter: true
 port: 1515
 incremental: true
 markdown: kramdown
-keep_files: [ css, js, img, fonts, service-worker.js, service-worker.js, humans.txt, robots.txt ]
+keep_files: [ css, js, img, fonts, downloads, service-worker.js, service-worker.js, humans.txt, robots.txt ]
 include: [ _headers, _redirects ]
 exclude: [ Gulpfile.js, admin, readme.md, package.json, Gemfile, Gemfile.lock, yarn.lock, yarn-error.log, netlify.toml, node_modules, vendor/**/*, run_control, "*.pem" ]

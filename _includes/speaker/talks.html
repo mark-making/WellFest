@@ -6,11 +6,16 @@
       <div>
         <h2 class="{{speaker.color}}">{{ speaker.title | upcase }}</h2>
         <h3 title="{{speaker.name | split: ' ' | first | append: '&apos;s' }} talk – '{{ speaker.title }}'">{{ speaker.name }}</h3>
-        <p>{{ speaker.info | truncatewords: 20 -}}</p>
-        <ul class="inline-space-saver">
+        <p>{{ speaker.info -}}</p>
+        <ul class="block-space-saver">
           <li>
-            <a href="https://medium.com/chippywellfest/tagged/cwfspeaker" target="new" rel="external noopener">
-              Download slides
+            <a href="/downloads/{{ speaker.name | downcase | replace: ' ', '-'| replace: '&', 'and'}}-{{ speaker.title | downcase | replace: ' ', '-' | remove: '?' | prepend: '-' | append: '.pdf' }}" target="new" rel="external noopener">
+              View slides <small>(PDF)</small>
+            </a>         
+          </li>                  
+          <li>
+            <a href="/downloads/{{ speaker.name | downcase | replace: ' ', '-'| replace: '&', 'and'}}-{{ speaker.title | downcase | replace: ' ', '-' | remove: '?' | prepend: '-' | append: '.mp3' }}" target="new" rel="external noopener" download>
+              Download audio <small>(MP3)</small>
             </a>         
           </li>                  
         </ul>        

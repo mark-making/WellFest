@@ -247,7 +247,26 @@ html.talks {
           color: $black;
         }
       }    
-    }    
+    }
+    .block-space-saver {
+      display: flex;
+      padding: 0;
+      flex-wrap: wrap;
+      list-style-position: inside;
+      li {
+        flex: 1 0 auto;
+        width: 100%;
+        color: $blue;
+        a {
+          display: inline-block;
+          color: $black;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }    
+    }     
     section {
       @media (min-width: 768px) {
         width: 80vw;
@@ -270,9 +289,6 @@ html.talks {
             }
           }
         }
-        &:first-of-type {
-          margin-top: 0;
-        }
         .content {
           // margin-right: 5vmin;
           min-width: 25vw;
@@ -283,15 +299,42 @@ html.talks {
               padding: 0;
               width: 90%;
             }
-            h2 {           
+            h2 {
+              position: relative;
               line-height: 1;
+              &:before {
+                @extend %has-decoration;
+                font-family: Arial, Helvetica, sans-serif;
+                transition: all .5s .7s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                position: absolute;
+                left: 0;                
+                opacity: 0;
+                content:'\25B0';
+                color: $yellow;                
+              }
               font: {
                 size: calc(2rem + 1vmin);
                 weight: 600;
               }            
             }
           }
+        }        
+        &:first-of-type {
+          margin-top: 0;
         }
+        &:target {
+          .content {
+            > div {
+              h2 {
+                transition: all .5s .7s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                padding-left: 2rem;
+                &:before {
+                  opacity: 1;
+                }            
+              }
+            }
+          }
+        }        
         .embed {
           position: relative;
           flex: 2;
