@@ -19,6 +19,7 @@ donate_link: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_
 event_date: "Saturday 29th September"
 url: "https://www.chippywellfest.co.uk"
 # url: "https://wellfest.netlify.com"
+# url: "https://wellfest-staging.netlify.com"
 strict_front_matter: true
 #
 # ┌────────────────┐
@@ -28,6 +29,6 @@ strict_front_matter: true
 port: 1515
 incremental: true
 markdown: kramdown
-keep_files: [ css, js, img, fonts, service-worker.js, service-worker.js, humans.txt, robots.txt ]
+keep_files: [ css, js, img, fonts, downloads, service-worker.js, service-worker.js, humans.txt, robots.txt ]
 include: [ _headers, _redirects ]
 exclude: [ Gulpfile.js, admin, readme.md, package.json, Gemfile, Gemfile.lock, yarn.lock, yarn-error.log, netlify.toml, node_modules, vendor/**/*, run_control, "*.pem" ]

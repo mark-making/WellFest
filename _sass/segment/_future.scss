@@ -1,0 +1,229 @@
+&#future {
+  @include grid-size($col: 5);
+  color: $black;
+  figure {
+    padding: 0;
+    margin: 0; 
+    z-index: -1;
+    img {
+      @extend %figure-image;
+      filter: grayscale(1);
+    }          
+  }
+  .content {
+    z-index: 1;
+    background-color: rgba($green,.9);
+    .padding {
+      @include content-box-padding(
+        $tb: 10%,
+        $lr: 10%
+      );
+    }
+    a {
+      color: $black;
+    }
+    h3 {
+      font-size: calc(1rem + 1vmin);
+    }
+    // .fieldset {
+    //   border: 0;
+    //   margin: 2rem 0 0;
+    //   padding: 0;
+    //   > div {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     flex-direction: column;
+    //     @media (min-width: 768px) {
+    //       flex-wrap: nowrap;
+    //     }
+    //     label {
+    //       margin-bottom: .5rem;
+    //       display: inline-block;
+    //     }
+    //     .full-name {
+    //       display: flex;
+    //       flex-direction: row;
+    //       margin-bottom: .5rem;
+    //     }
+    //     input, [type="submit"] {
+    //       font: {
+    //         size: calc(.5rem + 1vmin);
+    //         weight: 300;
+    //       }
+    //       color: $black;
+    //       padding: 1rem;
+    //       margin: 0;
+    //       flex: 5;
+    //       -webkit-appearance: none;
+    //       border: 1px solid darken($green,10);
+    //       line-height: normal;            
+    //     }
+    //     [type="email"], [type="text"] {
+    //       background-color: white;
+    //       width: 100%;
+    //     }
+    //     [type="submit"] {
+    //       font-weight: 400;
+    //       background-color: rgba($yellow,.9);
+    //       flex: 2;
+    //       word-break: keep-all;
+    //       cursor: pointer;
+    //       @media (min-width: 768px) {
+    //         border-left: none;
+    //       }
+    //       &:hover, &:focus {
+    //         background-color: lighten($yellow,10);
+    //       }
+    //     }
+    //   }
+    // }
+    form[name="mc-embedded-subscribe-form"] {
+      margin: 1.2rem 0 0;
+      * {
+        -webkit-appearance: none;
+      }
+      fieldset {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        > div {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          @media (min-width: 768px) {
+            flex-direction: initial;
+          }
+          .first-name,
+          .last-name {
+            flex: 1;
+            width: 100%;
+          }
+        }      
+      }
+      label {
+        display: block;
+        margin: .5rem 0;
+      }
+      input {
+        &[type="text"], &[type="email"] {
+          width: 100%;
+          line-height: normal;
+          background-color: $white;
+          &:hover, &:focus, &:active {
+            @supports (outline-offset: -5px) {
+              outline-offset: -5px;
+            }
+            outline: solid 1px darken($green,15);
+          }
+          &:focus:valid, &:invalid {
+            ~ span {
+              position: relative;
+              display: block;
+              margin-top: .9rem;            
+              &:before {
+                position: relative;
+                display: block;
+              }
+            }
+          }
+          &:focus:valid {
+            background-color: lighten($black,75);
+            ~ span {
+              @media (min-width: 768px) {
+                &:before {
+                  content: '\01F966  Good input';
+                }
+              }
+            }
+          }
+          &:invalid {
+            background-color: #EA3E36;
+            + button[type="submit"] {
+              pointer-events:none;
+              opacity: .5;
+            }
+            ~ span {
+              &:before {
+                content: '\01F35F  Bad input';
+              }
+            }            
+          }          
+        }
+        &[type="email"] {
+          width: 65%;
+          &:focus:invalid, &:hover:invalid {
+            outline-color: #b31912;
+          }
+        }
+        &[type="text"] {
+          &:focus:invalid, &:hover:invalid {
+            outline-color: #b31912;
+          }
+        }        
+      }
+      button[type="submit"] {
+        font-weight: 400;
+        background-color: rgba($yellow,.9);
+        width: 35%;
+        word-break: keep-all;
+        cursor: pointer;
+        @media (min-width: 768px) {
+          border-left: none;
+        }
+        &:hover, &:focus {
+          background-color: lighten($yellow,10);
+        }     
+      }
+      input, button {
+        font: {
+          size: calc(.5rem + 1vmin);
+          weight: 300;
+        }
+        position: relative;
+        border: 1px solid darken($green,10);
+        padding: 1rem;
+        margin: 0;
+      }
+      div.email {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      div.email, div.first-name, div.last-name {
+        position: relative;
+      }
+    }    
+  }
+  @media (min-width: 768px) {
+    height: auto;
+    figure {
+      min-height: 100%;
+      max-height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }    
+    .content {
+      @supports (display: grid) {
+        grid-column-end: span 3;
+        grid-row: 1 / 1;
+        width: auto;
+      }     
+      width: calc(100% / 1.5);
+    }
+  } 
+}
+
+@media (min-width: 768px) {
+  #mc-embedded-subscribe-form {
+    &:target {
+      transition: all .5s .7s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      padding: 1rem;
+      box-shadow: 0 0 50px -5px darken($green,20);
+    }
+  }
+}

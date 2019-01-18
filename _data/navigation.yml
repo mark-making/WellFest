@@ -1,5 +1,6 @@
 main: 
-  - name: "Book"
+  # - name: "Book"
+  - name: "Join"
   - name: "Donate"
 
 # No longer used

@@ -1,24 +1,30 @@
 &#donate {
-  @extend %desktop-only-grid-12-col;
+  @include grid-size($col: 5);
   @media (min-width: 768px) {
-    figure {
-      grid-column: 8 / span 5;
-      order: 2;
+    @supports (display: grid) {
+      figure {
+        grid-column: 4 / span 2;
+      }
     }
     .content {
-      order: 1;
-      grid-column: 2 / span 5;
-    }        
+      grid-row: 1 / 1;
+      @supports (display: grid) {
+        grid-column-end: span 3;
+      }
+      .padding {
+        @include content-box-padding(
+          $tb: 10%,
+          $lr: 10%
+        );      
+      }      
+    }
   }
   figure {
     padding: 0;
-    margin: 0;          
+    margin: 0;
+    order: 2;
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      font-family: 'object-fit: contain;';
-      display: block;
+      @extend %figure-image;
     }          
   }
   .button {

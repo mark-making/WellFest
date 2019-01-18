@@ -1,40 +1,3 @@
-var startSlide = 0,
-    imageSwiper = new Swiper('.image-slider', {
-      autoHeight: false,
-      slidesPerView: 'auto',
-      spaceBetween: 5,
-      initialSlide: startSlide,
-      centeredSlides: false, 
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },      
-      breakpoints: {
-        // when window width is less than or equal to 768px
-        768: {
-          spaceBetween: 0,
-          allowTouchMove: true,
-        }
-      }    
-    });
-
-var speakerInfo = new Swiper('.details-slider', {
-  initialSlide: startSlide,
-  spaceBetween: 20,
-  allowTouchMove: false,
-  autoHeight: true,
-  breakpoints: {
-    // when window width is less than or equal to 768px
-    768: {
-      allowTouchMove: true,
-    }
-  }    
-});
-
-speakerInfo.controller.control = imageSwiper;
-imageSwiper.controller.control = speakerInfo;
-
-
 // initialize the scrollama
 
 var graphic = document.getElementById('site-logo'),
@@ -75,6 +38,43 @@ function init() {
 
 // kick things off
 init();
+
+
+var startSlide = 0,
+    imageSwiper = new Swiper('.image-slider', {
+      autoHeight: false,
+      slidesPerView: 'auto',
+      spaceBetween: 5,
+      initialSlide: startSlide,
+      centeredSlides: false, 
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },      
+      breakpoints: {
+        // when window width is less than or equal to 768px
+        768: {
+          spaceBetween: 0,
+          allowTouchMove: true,
+        }
+      }    
+    });
+
+var speakerInfo = new Swiper('.details-slider', {
+  initialSlide: startSlide,
+  spaceBetween: 20,
+  allowTouchMove: false,
+  autoHeight: true,
+  breakpoints: {
+    // when window width is less than or equal to 768px
+    768: {
+      allowTouchMove: true,
+    }
+  }    
+});
+
+speakerInfo.controller.control = imageSwiper;
+imageSwiper.controller.control = speakerInfo;
 	
 
 try {

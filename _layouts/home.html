@@ -1,10 +1,18 @@
 ---
 layout: default
+# {% include /segments/find.html %}
+# {% include /segments/you.html %}
+# {% include /segments/join.html %}
+# {% include /segments/together.html %}
+# footer {% include /footer/book.html %}
 ---
+<script type="application/ld+json">
+{% include /json-ld/homepage.json %}
+</script>
 {% include /intro/introduction.html %}
+{% include /segments/event.html %}
 {% include /speaker/details.html %}
-{% include /segments/you.html %}
-{% include /segments/together.html %}
-{% include /segments/find.html %}
-{% include /segments/join.html %}
+{% include /segments/you-2.html %}
+{% include /segments/join-2.html %}
+{% include /segments/future.html %}
 {% include /segments/donate.html %}

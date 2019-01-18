@@ -9,23 +9,23 @@
   "scripts": {
     "serve_dev_env-production": "JEKYLL_ENV=production bundle exec jekyll s --livereload & gulp",
     "serve_dev_env-development": "JEKYLL_ENV=development bundle exec jekyll s --livereload & gulp",
-    "build": "bundle exec jekyll b ; gulp"
+    "build": "JEKYLL_ENV=production bundle exec jekyll b ; gulp"
   },
   "repository": "git@github.com:mark-making/WellFest.git",
   "author": "Shannon Young <shannon@mark-making.com>",
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "browser-sync": "2.26.0",
+    "browser-sync": "2.26.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "6.0.0",
     "gulp-concat": "latest",
     "gulp-htmlmin": "5.0.1",
-    "gulp-imagemin": "latest",
+    "gulp-imagemin": "5.0.3",
     "gulp-load-plugins": "latest",
     "gulp-purgecss": "1.1.1",
     "gulp-rename": "latest",
-    "gulp-sass": "latest",
+    "gulp-sass": "4.0.2",
     "gulp-uglify": "latest",
     "gulp-webp": "latest"
   }

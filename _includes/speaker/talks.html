@@ -1,0 +1,31 @@
+<section>
+  {{ content }}
+  {% for speaker in site.data.speaker-profiles.speaker %}
+  <div class="{{speaker.color}}" id="{{ speaker.name | slugify }}">
+    <div class="content">
+      <div>
+        <h2 class="{{speaker.color}}">{{ speaker.title | upcase }}</h2>
+        <h3 title="{{speaker.name | split: ' ' | first | append: '&apos;s' }} talk – '{{ speaker.title }}'">{{ speaker.name }}</h3>
+        <p>{{ speaker.info -}}</p>
+        <ul class="block-space-saver">
+          <li>
+            <a href="/downloads/{{ speaker.name | downcase | replace: ' ', '-'| replace: '&', 'and'}}-{{ speaker.title | downcase | replace: ' ', '-' | remove: '?' | prepend: '-' | append: '.pdf' }}" target="new" rel="external noopener">
+              View slides <small>(PDF)</small>
+            </a>         
+          </li>                  
+          <li>
+            <a href="/downloads/{{ speaker.name | downcase | replace: ' ', '-'| replace: '&', 'and'}}-{{ speaker.title | downcase | replace: ' ', '-' | remove: '?' | prepend: '-' | append: '.mp3' }}" target="new" rel="external noopener" download>
+              Download audio <small>(MP3)</small>
+            </a>         
+          </li>                  
+        </ul>        
+      </div>
+    </div>
+    <div class="{{speaker.color}} embed aspect-ratio">
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/{{speaker.embed}}?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+

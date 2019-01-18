@@ -1,0 +1,14 @@
+{
+  "@context": "http://schema.org",
+  "@type": "WebPage",
+  "name": "{{site.title}}",
+  "description": "{{site.description}}",
+  "lastReviewed": "{{ site.time }}",
+  "specialty": {
+    "@type": "MedicalSpecialty",
+    "name": [
+      "DietNutrition",
+      "CommunityHealth"
+    ]
+  }
+}

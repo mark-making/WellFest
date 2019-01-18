@@ -49,7 +49,7 @@ let paths = {
 
 function styles() {
   return gulp.src(paths.styles.src)
-    .pipe(plugins.sass({ outputStyle: 'expanded' }))
+    .pipe(plugins.sass({ outputStyle: 'expanded', sourceComments: true }))
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(plugins.rename('screen.min.css'))
     .pipe(plugins.sass({ outputStyle: 'compressed' }))
